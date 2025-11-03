@@ -1,0 +1,1725 @@
+<html lang="en"><head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- meta -->
+		<title>Pokémon Cards CSS Holographic Effect</title>
+		<meta name="description" content="An exploration of what's possible with CSS for Pokemon Cards, simeydotme (Simon Goellner)">
+		
+		<link rel="canonical" href="https://poke-holo.simey.me">
+		<link rel="icon" href="favicon.png">
+		<meta name="thumbnail" content="thumb.png">
+
+		<meta property="og:url" content="https://poke-holo.simey.me">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Pokémon Cards CSS Holographic Effect">
+		<meta property="og:description" content="An exploration of what's possible with CSS for Pokemon Cards, simeydotme (Simon Goellner)">
+		<meta property="og:image" content="https://poke-holo.simey.me/thumb.png">
+
+		<meta name="twitter:title" content="Pokémon Cards CSS Holographic Effect">
+		<meta name="twitter:description" content="An exploration of what's possible with CSS for Pokemon Cards, simeydotme (Simon Goellner)">
+		<meta name="twitter:image" content="https://poke-holo.simey.me/thumb.png">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@simeydotme">
+
+		<!-- fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,300;1,700&amp;family=Roboto:ital,wght@0,300;0,700;1,300;1,700&amp;display=swap"> 
+		
+		<!-- styles -->
+		<link rel="stylesheet" href="css/global.css">
+		
+		<link rel="stylesheet" href="css/cards/base.css">
+		<link rel="stylesheet" href="css/cards.css">
+		<link rel="stylesheet" href="css/cards/basic.css">
+		<link rel="stylesheet" href="css/cards/reverse-holo.css">
+		<link rel="stylesheet" href="css/cards/regular-holo.css">
+		<link rel="stylesheet" href="css/cards/cosmos-holo.css">
+		<link rel="stylesheet" href="css/cards/amazing-rare.css">
+		<link rel="stylesheet" href="css/cards/radiant-holo.css">
+		<link rel="stylesheet" href="css/cards/v-regular.css">
+		<link rel="stylesheet" href="css/cards/v-full-art.css">
+		<link rel="stylesheet" href="css/cards/v-max.css">
+		<link rel="stylesheet" href="css/cards/v-star.css">
+		<link rel="stylesheet" href="css/cards/trainer-full-art.css">
+		<link rel="stylesheet" href="css/cards/rainbow-holo.css">
+		<link rel="stylesheet" href="css/cards/rainbow-alt.css">
+		<link rel="stylesheet" href="css/cards/secret-rare.css">
+		<link rel="stylesheet" href="css/cards/trainer-gallery-holo.css">
+		<link rel="stylesheet" href="css/cards/trainer-gallery-v-regular.css">
+		<link rel="stylesheet" href="css/cards/trainer-gallery-v-max.css">
+		<link rel="stylesheet" href="css/cards/trainer-gallery-secret-rare.css">
+		<link rel="stylesheet" href="css/cards/shiny-rare.css">
+		<link rel="stylesheet" href="css/cards/shiny-v.css">
+		<link rel="stylesheet" href="css/cards/shiny-vmax.css">
+		<link rel="stylesheet" href="css/cards/swsh-pikachu.css">
+
+		<script type="module" crossorigin="" src="/assets/index.475c66e5.js"></script>
+		<link rel="stylesheet" href="/assets/index.222dff17.css">
+	</head>
+	<body>
+			
+	<!-- Google tag (gtag.js) -->
+	<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3SKXCY5997"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-3SKXCY5997', {
+			'linker': { 'domains': ['poke-holo.simey.me', 'deck-24abcd.netlify.app'] }
+		});
+	</script>
+
+    <div id="app"><main><header><h1 id="⚓-top">Pokemon Cards <sup>V2</sup></h1> <p class="author">By <a href="https://twitter.com/simeydotme"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg> @simeydotme</a> |
+			<em><a href="https://github.com/simeydotme/pokemon-cards-css"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg> Simon Goellner</a></em></p> <section class="intro" id="⚓-intro"><p>A collection of <mark>advanced CSS</mark> styles to create
+				<mark>realistic-looking effects</mark> for the faces of Pokemon cards. 
+				The cards use <mark>3d transforms</mark>, <mark>filters</mark>, <mark>blend modes</mark>,
+				<mark>css gradients</mark> and interactions to provide a unique experience when taking a closer look!</p></section> <div class="showcase"><div class="card lightning / interactive masked active" data-number="160" data-set="swsh12pt5" data-subtypes="basic" data-supertype="pokémon" data-rarity="rare secret" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Pikachu." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.6069135894170818;
+    --seedy: 0.7771322137815447;
+    --cosmosbg: 445px 994px;
+  
+    --mask: url(https://poke-holo.b-cdn.net/foils/swsh12pt5/masks/upscaled/160_foil_etched_swsecret_2x.webp);
+    --foil: url(https://poke-holo.b-cdn.net/foils/swsh12pt5/foils/upscaled/160_foil_etched_swsecret_2x.webp);
+      "><img src="https://images.pokemontcg.io/swsh12pt5/160_hires.png" alt="Front design of the Pikachu Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></div> <section class="info"><h2>Click on a Card to take a Closer look!</h2> 
+
+			<hr> 
+
+			<p class="small">I'm using SvelteJS to handle interactivity and state; <strong>assigning values to css custom properties</strong> (variables) which 
+					in-turn drive the effects and 3d transforms. 
+					<br> 
+					<a href="https://github.com/simeydotme/pokemon-cards-css">Source code is in the repository</a>.</p></section></header> <section class="search-area svelte-1leehxl"><input type="search" name="search" id="search" placeholder="eg: Morpeko or Marnie" class="svelte-1leehxl"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search svelte-1leehxl" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path><path d="M21 21l-6 -6"></path></svg></section> <h3 class="svelte-1leehxl">Browse cards below, Or search for your favourite!</h3>    <h2 id="⚓-common"><a href="#⚓-common">Common &amp; Uncommon</a></h2> <p>All cards get a 3d rotation with CSS based on the cursor position.<br> The default basic
+			non-holo cards simply apply a <mark>flare/glare effect</mark> to the card which follows the mouse.</p> <section class="card-grid svelte-1e57r8c"><div class="card water / interactive" data-number="33" data-set="" data-subtypes="basic" data-supertype="pokémon" data-rarity="common" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Squirtle." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.05630461302148948;
+    --seedy: 0.3269224889419097;
+    --cosmosbg: 41px 418px;
+  "><img src="https://images.pokemontcg.io/sm10/33_hires.png" alt="Front design of the Squirtle Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card fire / interactive" data-number="7" data-set="" data-subtypes="basic" data-supertype="pokémon" data-rarity="common" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Charmander." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.17499654790384178;
+    --seedy: 0.9788273004413768;
+    --cosmosbg: 128px 1252px;
+  "><img src="https://images.pokemontcg.io/sm115/7_hires.png" alt="Front design of the Charmander Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card grass / interactive" data-number="1" data-set="" data-subtypes="basic" data-supertype="pokémon" data-rarity="common" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Bulbasaur." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.4121037419667283;
+    --seedy: 0.4945995721310954;
+    --cosmosbg: 302px 633px;
+  "><img src="https://images.pokemontcg.io/sm35/1_hires.png" alt="Front design of the Bulbasaur Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-reverse"><a href="#⚓-reverse">Reverse Holo non-rares</a></h2> <p>Reverse holo cards come in <mark>many shapes and sizes</mark> (trainer, stage1, and different energy types). <br> Therefore
+			there are a few examples here to show the different variations. The <mark>background uses a foil and a mask layer</mark>
+			along with a glare. I also <mark>clip the glare</mark> into the image window to treat the image and the holofoil differently.</p> <section class="card-grid svelte-1e57r8c"><div class="card metal / interactive masked" data-number="127" data-set="swsh12" data-subtypes="basic" data-supertype="pokémon" data-rarity="common reverse holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Togedemaru." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.08868467869924701;
+    --seedy: 0.7178914397620023;
+    --cosmosbg: 65px 918px;
+  
+    --mask: url(https://poke-holo.b-cdn.net/foils/swsh12/masks/upscaled/127_foil_holo_reverse_2x.webp);
+    --foil: url(https://poke-holo.b-cdn.net/foils/swsh12/foils/upscaled/127_foil_holo_reverse_2x.webp);
+      "><img src="https://images.pokemontcg.io/swsh12/127_hires.png" alt="Front design of the Togedemaru Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card psychic / interactive masked" data-number="85" data-set="swsh12" data-subtypes="basic" data-supertype="pokémon" data-rarity="uncommon reverse holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Dedenne." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.24698217133453737;
+    --seedy: 0.1241790760395095;
+    --cosmosbg: 181px 158px;
+  
+    --mask: url(https://poke-holo.b-cdn.net/foils/swsh12/masks/upscaled/085_foil_holo_reverse_2x.webp);
+    --foil: url(https://poke-holo.b-cdn.net/foils/swsh12/foils/upscaled/085_foil_holo_reverse_2x.webp);
+      "><img src="https://images.pokemontcg.io/swsh12/85_hires.png" alt="Front design of the Dedenne Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card darkness / interactive masked" data-number="116" data-set="swsh12" data-subtypes="basic" data-supertype="pokémon" data-rarity="uncommon reverse holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Morpeko." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.37547555609342653;
+    --seedy: 0.771912661514244;
+    --cosmosbg: 275px 988px;
+  
+    --mask: url(https://poke-holo.b-cdn.net/foils/swsh12/masks/upscaled/116_foil_holo_reverse_2x.webp);
+    --foil: url(https://poke-holo.b-cdn.net/foils/swsh12/foils/upscaled/116_foil_holo_reverse_2x.webp);
+      "><img src="https://images.pokemontcg.io/swsh12/116_hires.png" alt="Front design of the Morpeko Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card colorless / interactive loading masked" data-number="120" data-set="swsh9" data-subtypes="basic" data-supertype="pokémon" data-rarity="common reverse holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Bidoof." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.37991222960866755;
+    --seedy: 0.5988771009973344;
+    --cosmosbg: 278px 766px;
+  "><img src="https://images.pokemontcg.io/swsh9/120_hires.png" alt="Front design of the Bidoof Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card lightning / interactive loading masked" data-number="49" data-set="swsh12" data-subtypes="basic" data-supertype="pokémon" data-rarity="common reverse holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Pikachu." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.5610168536938942;
+    --seedy: 0.7564065267454118;
+    --cosmosbg: 411px 968px;
+  "><img src="https://images.pokemontcg.io/swsh12/49_hires.png" alt="Front design of the Pikachu Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card fighting / interactive loading masked" data-number="138" data-set="swsh8" data-subtypes="basic" data-supertype="pokémon" data-rarity="common reverse holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Onix." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.5131999018415311;
+    --seedy: 0.6155688610579146;
+    --cosmosbg: 376px 787px;
+  "><img src="https://images.pokemontcg.io/swsh8/138_hires.png" alt="Front design of the Onix Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="68" data-set="pgo" data-subtypes="stadium" data-supertype="trainer" data-rarity="uncommon reverse holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; PokéStop." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.655711617859666;
+    --seedy: 0.9709113551159892;
+    --cosmosbg: 481px 1242px;
+  "><img src="https://images.pokemontcg.io/pgo/68_hires.png" alt="Front design of the PokéStop Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="173" data-set="swsh1" data-subtypes="supporter" data-supertype="trainer" data-rarity="uncommon reverse holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Poké Kid." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.7366595136782809;
+    --seedy: 0.36781216887311763;
+    --cosmosbg: 540px 470px;
+  "><img src="https://images.pokemontcg.io/swsh1/173_hires.png" alt="Front design of the Poké Kid Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="150" data-set="swsh9" data-subtypes="item" data-supertype="trainer" data-rarity="uncommon reverse holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Ultra Ball." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.6030510034701868;
+    --seedy: 0.6182501735397241;
+    --cosmosbg: 442px 791px;
+  "><img src="https://images.pokemontcg.io/swsh9/150_hires.png" alt="Front design of the Ultra Ball Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-holo"><a href="#⚓-holo">Holofoil Rare</a></h2> <p>Holo cards have an additional <mark>vertical beam holo effect</mark>. <br> This uses a
+			combintation of <mark>repeating gradients and filters</mark>, with <mark>clip-path</mark> to mask
+			the holo areas for each stage. To get the holo effect to change while rotating the card I set the
+			background-position of each gradient layer based on cursor.</p> <section class="card-grid svelte-1e57r8c"><div class="card water / interactive loading masked" data-number="24" data-set="pgo" data-subtypes="basic" data-supertype="pokémon" data-rarity="rare holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Articuno." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.43637864830572426;
+    --seedy: 0.8498113343928453;
+    --cosmosbg: 320px 1087px;
+  "><img src="https://images.pokemontcg.io/pgo/24_hires.png" alt="Front design of the Articuno Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card lightning / interactive loading masked" data-number="29" data-set="pgo" data-subtypes="basic" data-supertype="pokémon" data-rarity="rare holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Zapdos." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.09106655485043491;
+    --seedy: 0.9441036281309466;
+    --cosmosbg: 66px 1208px;
+  "><img src="https://images.pokemontcg.io/pgo/29_hires.png" alt="Front design of the Zapdos Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card fire / interactive loading masked" data-number="12" data-set="pgo" data-subtypes="basic" data-supertype="pokémon" data-rarity="rare holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Moltres." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.7847315287303628;
+    --seedy: 0.5250678952982765;
+    --cosmosbg: 575px 672px;
+  "><img src="https://images.pokemontcg.io/pgo/12_hires.png" alt="Front design of the Moltres Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card psychic / interactive loading masked" data-number="85" data-set="swsh1" data-subtypes="stage 2" data-supertype="pokémon" data-rarity="rare holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Gengar." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.624920584938308;
+    --seedy: 0.7810972772529364;
+    --cosmosbg: 458px 999px;
+  "><img src="https://images.pokemontcg.io/swsh1/85_hires.png" alt="Front design of the Gengar Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="132" data-set="swsh9" data-subtypes="supporter" data-supertype="trainer" data-rarity="rare holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Boss's Orders." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.6620151928924101;
+    --seedy: 0.6465991488869111;
+    --cosmosbg: 485px 827px;
+  "><img src="https://images.pokemontcg.io/swsh9/132_hires.png" alt="Front design of the Boss's Orders Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card darkness / interactive loading masked" data-number="43" data-set="pgo" data-subtypes="stage 2" data-supertype="pokémon" data-rarity="rare holo" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Tyranitar." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.6475103689543675;
+    --seedy: 0.6904276241464634;
+    --cosmosbg: 475px 883px;
+  "><img src="https://images.pokemontcg.io/pgo/43_hires.png" alt="Front design of the Tyranitar Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-galaxy"><a href="#⚓-galaxy">Galaxy/Cosmos Holofoil</a></h2> <p>Similar to the Holofoil, but this uses a special image <mark>background of a galaxy effect</mark>
+			with a <mark>gradient rainbow set to color-dodge &amp; color-burn</mark> on top.</p> <h3>An instant classic for any PTCG fan!</h3> <section class="card-grid svelte-1e57r8c"><div class="card lightning / interactive loading masked" data-number="swsh012" data-set="swshp" data-subtypes="basic" data-supertype="pokémon" data-rarity="rare holo cosmos" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Morpeko." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.7749205618708502;
+    --seedy: 0.8254533584954431;
+    --cosmosbg: 568px 1056px;
+  "><img src="https://images.pokemontcg.io/swshp/SWSH012_hires.png" alt="Front design of the Morpeko Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="60" data-set="swsh45" data-subtypes="supporter" data-supertype="trainer" data-rarity="rare holo cosmos" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Professor's Research." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.40894669178198284;
+    --seedy: 0.29642259329983545;
+    --cosmosbg: 300px 379px;
+  "><img src="https://images.pokemontcg.io/swsh45/60_hires.png" alt="Front design of the Professor's Research Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card colorless / interactive loading masked" data-number="swsh127" data-set="swshp" data-subtypes="basic" data-supertype="pokémon" data-rarity="rare holo cosmos" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Eevee." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.4919881069219806;
+    --seedy: 0.4015183825272637;
+    --cosmosbg: 361px 513px;
+  "><img src="https://images.pokemontcg.io/swshp/SWSH127_hires.png" alt="Front design of the Eevee Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-amazing"><a href="#⚓-amazing">Holofoil Amazing Rare</a></h2> <p>Amazing Rare cards have a <mark>very unique shiny foil</mark> that extends past the frame and is much shinier than
+			a regular holo effect, and textured. We achieve this by using a mask and applying a glitter effect with a lighten filter.</p> <section class="card-grid svelte-1e57r8c"><div class="card grass / interactive loading masked" data-number="9" data-set="swsh4" data-subtypes="basic" data-supertype="pokémon" data-rarity="amazing rare" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Celebi." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.2458462891313773;
+    --seedy: 0.9346780438809474;
+    --cosmosbg: 180px 1196px;
+  "><img src="https://images.pokemontcg.io/swsh4/9_hires.png" alt="Front design of the Celebi Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card lightning / interactive loading masked" data-number="50" data-set="swsh4" data-subtypes="basic" data-supertype="pokémon" data-rarity="amazing rare" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Raikou." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.7266042733864645;
+    --seedy: 0.9822055912596455;
+    --cosmosbg: 533px 1257px;
+  "><img src="https://images.pokemontcg.io/swsh4/50_hires.png" alt="Front design of the Raikou Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card psychic / interactive loading masked" data-number="82" data-set="swsh4" data-subtypes="basic" data-supertype="pokémon" data-rarity="amazing rare" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Zacian." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.7518910770461392;
+    --seedy: 0.38906554532136783;
+    --cosmosbg: 551px 498px;
+  "><img src="https://images.pokemontcg.io/swsh4/82_hires.png" alt="Front design of the Zacian Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card fighting / interactive loading masked" data-number="102" data-set="swsh4" data-subtypes="basic" data-supertype="pokémon" data-rarity="amazing rare" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Zamazenta." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.6982317051681723;
+    --seedy: 0.8638168629366746;
+    --cosmosbg: 512px 1105px;
+  "><img src="https://images.pokemontcg.io/swsh4/102_hires.png" alt="Front design of the Zamazenta Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card metal / interactive loading masked" data-number="119" data-set="swsh4" data-subtypes="basic" data-supertype="pokémon" data-rarity="amazing rare" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Jirachi." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.44141973490445696;
+    --seedy: 0.4151235550637554;
+    --cosmosbg: 324px 531px;
+  "><img src="https://images.pokemontcg.io/swsh4/119_hires.png" alt="Front design of the Jirachi Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card colorless / interactive loading masked" data-number="138" data-set="swsh4" data-subtypes="basic" data-supertype="pokémon" data-rarity="amazing rare" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Rayquaza." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.5656040364666176;
+    --seedy: 0.6219314810450611;
+    --cosmosbg: 415px 796px;
+  "><img src="https://images.pokemontcg.io/swsh4/138_hires.png" alt="Front design of the Rayquaza Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card fire / interactive loading masked" data-number="17" data-set="swsh45" data-subtypes="basic" data-supertype="pokémon" data-rarity="amazing rare" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Reshiram." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.8578132187906936;
+    --seedy: 0.5532915336296083;
+    --cosmosbg: 629px 708px;
+  "><img src="https://images.pokemontcg.io/swsh45/17_hires.png" alt="Front design of the Reshiram Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card water / interactive loading masked" data-number="21" data-set="swsh45" data-subtypes="basic" data-supertype="pokémon" data-rarity="amazing rare" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Kyogre." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.5787596414240461;
+    --seedy: 0.6484136266871555;
+    --cosmosbg: 424px 829px;
+  "><img src="https://images.pokemontcg.io/swsh45/21_hires.png" alt="Front design of the Kyogre Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card darkness / interactive loading masked" data-number="46" data-set="swsh45" data-subtypes="basic" data-supertype="pokémon" data-rarity="amazing rare" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Yveltal." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.5871858184804029;
+    --seedy: 0.9365755153936596;
+    --cosmosbg: 430px 1198px;
+  "><img src="https://images.pokemontcg.io/swsh45/46_hires.png" alt="Front design of the Yveltal Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-radiant"><a href="#⚓-radiant">Radiant Holofoil</a></h2> <p>The newest holofoil added to the series! <br> The radiant effect proved
+			<mark>very difficult to emulate</mark>
+			without crazy math, so I settled with a <mark>criss-cross linear gradient pattern</mark> that moves
+			across the card.</p> <section class="card-grid svelte-1e57r8c"><div class="card fire / interactive loading masked" data-number="11" data-set="pgo" data-subtypes="basic radiant" data-supertype="pokémon" data-rarity="radiant rare" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Radiant Charizard." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.7957158918262861;
+    --seedy: 0.9331248749917282;
+    --cosmosbg: 584px 1194px;
+  "><img src="https://images.pokemontcg.io/pgo/11_hires.png" alt="Front design of the Radiant Charizard Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card psychic / interactive loading masked" data-number="59" data-set="swsh12" data-subtypes="basic radiant" data-supertype="pokémon" data-rarity="radiant rare" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Radiant Alakazam." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.27453749111523074;
+    --seedy: 0.5959750772680105;
+    --cosmosbg: 201px 762px;
+  "><img src="https://images.pokemontcg.io/swsh12/59_hires.png" alt="Front design of the Radiant Alakazam Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card metal / interactive loading masked" data-number="120" data-set="swsh12" data-subtypes="basic radiant" data-supertype="pokémon" data-rarity="radiant rare" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Radiant Jirachi." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.08774504470033073;
+    --seedy: 0.13708683010190115;
+    --cosmosbg: 64px 175px;
+  "><img src="https://images.pokemontcg.io/swsh12/120_hires.png" alt="Front design of the Radiant Jirachi Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-trainer-gallery-holo"><a href="#⚓-trainer-gallery-holo">Trainer Gallery Holofoil</a></h2> <p>The effect for Trainer Gallery holofoils gives it a <mark>kind of metallic effect with iridescent shine</mark>. This is achieved with a <mark>large color dodge linear gradient</mark>, and a
+			<mark>hard-light radial gradient</mark> on top, at the cursor position, to give the shimmer.</p> <section class="card-grid svelte-1e57r8c"><div class="card fire / interactive loading masked" data-number="tg03" data-set="swsh11tg" data-subtypes="stage 2" data-supertype="pokémon" data-rarity="trainer gallery rare holo" data-trainer-gallery="true" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Charizard." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.5270738245458166;
+    --seedy: 0.9464904478430773;
+    --cosmosbg: 386px 1211px;
+  "><img src="https://images.pokemontcg.io/swsh11tg/TG03_hires.png" alt="Front design of the Charizard Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card lightning / interactive loading masked" data-number="tg05" data-set="swsh11tg" data-subtypes="basic" data-supertype="pokémon" data-rarity="trainer gallery rare holo" data-trainer-gallery="true" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Pikachu." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.5373806940378952;
+    --seedy: 0.38111723693906663;
+    --cosmosbg: 394px 487px;
+  "><img src="https://images.pokemontcg.io/swsh11tg/TG05_hires.png" alt="Front design of the Pikachu Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card water / interactive loading masked" data-number="tg02" data-set="swsh12tg" data-subtypes="stage 1" data-supertype="pokémon" data-rarity="rare holo" data-trainer-gallery="true" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Milotic." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.8728724976349989;
+    --seedy: 0.41433093927796494;
+    --cosmosbg: 640px 530px;
+  "><img src="https://images.pokemontcg.io/swsh12tg/TG02_hires.png" alt="Front design of the Milotic Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-v"><a href="#⚓-v">Pokemon V</a></h2> <p>V cards have a <mark>diagonal holographic effect</mark> which that appears to travel in opposite
+			directions when you tilt the card into the light.</p> <p>This effect is achieved with <mark>multiple background gradients</mark> and I change the background
+			positions based on the cursor x/y. The gradients are set to color-dodge, and there's a subtle svg
+			noise effect.</p> <section class="card-grid svelte-1e57r8c"><div class="card dragon / interactive loading masked" data-number="110" data-set="swsh7" data-subtypes="basic v rapid strike" data-supertype="pokémon" data-rarity="rare holo v" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Rayquaza V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.10276492646438973;
+    --seedy: 0.35429968448443483;
+    --cosmosbg: 75px 453px;
+  "><img src="https://images.pokemontcg.io/swsh7/110_hires.png" alt="Front design of the Rayquaza V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card colorless / interactive loading masked" data-number="138" data-set="swsh12" data-subtypes="basic v" data-supertype="pokémon" data-rarity="rare holo v" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Lugia V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.9600664029047012;
+    --seedy: 0.13484627657559844;
+    --cosmosbg: 704px 172px;
+  "><img src="https://images.pokemontcg.io/swsh12/138_hires.png" alt="Front design of the Lugia V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card dragon / interactive loading masked" data-number="49" data-set="pgo" data-subtypes="basic v" data-supertype="pokémon" data-rarity="rare holo v" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Dragonite V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.39792104932334904;
+    --seedy: 0.10306565334360185;
+    --cosmosbg: 292px 131px;
+  "><img src="https://images.pokemontcg.io/pgo/49_hires.png" alt="Front design of the Dragonite V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-v-full-art"><a href="#⚓-v-full-art">Pokemon V <sup>(Full Art)</sup></a></h2> <p>Similar to the Pokemon V effect, Full-Art cards <mark>use diagonal gradients</mark>, but they
+			have <mark>additional texture</mark> when looked at from certain angles. This is achieved with
+			an <mark>additional background image with an exclusion filter</mark>. The effect is also more
+			vibrant which adds to the metallic look.</p> <p>The texture effect is not identical to reality as the real cards each have a unique pattern that
+			follows the art.</p> <section class="card-grid svelte-1e57r8c"><div class="card psychic / interactive loading masked" data-number="250" data-set="swsh8" data-subtypes="basic v fusion strike" data-supertype="pokémon" data-rarity="rare ultra" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Mew V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.2602792070778327;
+    --seedy: 0.17735498661230298;
+    --cosmosbg: 191px 227px;
+  "><img src="https://images.pokemontcg.io/swsh8/250_hires.png" alt="Front design of the Mew V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card metal / interactive loading masked" data-number="183" data-set="swsh3" data-subtypes="basic v" data-supertype="pokémon" data-rarity="rare ultra" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Scizor V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.7525187355416573;
+    --seedy: 0.8915551947406147;
+    --cosmosbg: 552px 1141px;
+  "><img src="https://images.pokemontcg.io/swsh3/183_hires.png" alt="Front design of the Scizor V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card psychic / interactive loading masked" data-number="176" data-set="swsh12" data-subtypes="basic v" data-supertype="pokémon" data-rarity="rare ultra" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Unown V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.407592451574712;
+    --seedy: 0.6492595869907158;
+    --cosmosbg: 299px 831px;
+  "><img src="https://images.pokemontcg.io/swsh12/176_hires.png" alt="Front design of the Unown V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-v-alternate-art"><a href="#⚓-v-alternate-art">Pokemon V <sup>(Alternate Art)</sup></a></h2> <p>Alternate Art Pokemon V cards have <mark>practically the same holo effect as the Ultra Rare (Full Art) cards</mark>. The only difference is the pattern texture.</p> <p>The effect looks somewhat different though due to the type of artwork.</p> <section class="card-grid svelte-1e57r8c"><div class="card fire / interactive loading masked" data-number="swsh179" data-set="swshp" data-subtypes="basic v single strike" data-supertype="pokémon" data-rarity="rare holo v" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Flareon V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.23297607422532163;
+    --seedy: 0.4881504631604423;
+    --cosmosbg: 171px 624px;
+  "><img src="https://images.pokemontcg.io/swshp/SWSH179_hires.png" alt="Front design of the Flareon V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card water / interactive loading masked" data-number="swsh181" data-set="swshp" data-subtypes="basic v rapid strike" data-supertype="pokémon" data-rarity="rare holo v" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Vaporeon V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.9065157991180168;
+    --seedy: 0.8575889241997052;
+    --cosmosbg: 665px 1097px;
+  "><img src="https://images.pokemontcg.io/swshp/SWSH181_hires.png" alt="Front design of the Vaporeon V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card lightning / interactive loading masked" data-number="swsh183" data-set="swshp" data-subtypes="basic v" data-supertype="pokémon" data-rarity="rare holo v" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Jolteon V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.17696537023239511;
+    --seedy: 0.8887285093162935;
+    --cosmosbg: 129px 1137px;
+  "><img src="https://images.pokemontcg.io/swshp/SWSH183_hires.png" alt="Front design of the Jolteon V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card grass / interactive loading masked" data-number="245" data-set="swsh8" data-subtypes="basic v" data-supertype="pokémon" data-rarity="rare ultra" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Celebi V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.9059267235654367;
+    --seedy: 0.9660662353152927;
+    --cosmosbg: 664px 1236px;
+  "><img src="https://images.pokemontcg.io/swsh8/245_hires.png" alt="Front design of the Celebi V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card dragon / interactive loading masked" data-number="186" data-set="swsh11" data-subtypes="basic v" data-supertype="pokémon" data-rarity="rare ultra" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Giratina V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.9437228297703376;
+    --seedy: 0.06621969780105508;
+    --cosmosbg: 692px 84px;
+  "><img src="https://images.pokemontcg.io/swsh11/186_hires.png" alt="Front design of the Giratina V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card metal / interactive loading masked" data-number="177" data-set="swsh10" data-subtypes="basic v" data-supertype="pokémon" data-rarity="rare ultra" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Origin Forme Dialga V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.5336049096626108;
+    --seedy: 0.8917782884714858;
+    --cosmosbg: 391px 1141px;
+  "><img src="https://images.pokemontcg.io/swsh10/177_hires.png" alt="Front design of the Origin Forme Dialga V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-v-max"><a href="#⚓-v-max">VMax</a></h2> <p>The gradient effect of Pokemon VMax is more subtle, using a <mark>larger background gradient</mark>
+			which moves more slowly. But the <mark>texture effect is more pronounced</mark>.</p> <section class="card-grid svelte-1e57r8c"><div class="card water / interactive loading masked" data-number="29" data-set="swsh7" data-subtypes="vmax" data-supertype="pokémon" data-rarity="rare holo vmax" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Gyarados VMAX." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.5984556627910647;
+    --seedy: 0.009242593839086433;
+    --cosmosbg: 439px 11px;
+  "><img src="https://images.pokemontcg.io/swsh7/29_hires.png" alt="Front design of the Gyarados VMAX Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card colorless / interactive loading masked" data-number="51" data-set="swsh45" data-subtypes="vmax" data-supertype="pokémon" data-rarity="rare holo vmax" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Ditto VMAX." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.05039484405866934;
+    --seedy: 0.10802353411506715;
+    --cosmosbg: 36px 138px;
+  "><img src="https://images.pokemontcg.io/swsh45/51_hires.png" alt="Front design of the Ditto VMAX Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card water / interactive loading masked" data-number="29" data-set="swsh9" data-subtypes="vmax" data-supertype="pokémon" data-rarity="rare holo vmax" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Kingler VMAX." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.3304564076697868;
+    --seedy: 0.8515079723509731;
+    --cosmosbg: 242px 1089px;
+  "><img src="https://images.pokemontcg.io/swsh9/29_hires.png" alt="Front design of the Kingler VMAX Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-v-max-alternate"><a href="#⚓-v-max-alternate">VMax <sup>(Alternate/Rainbow)</sup></a></h2> <p>There's some VMax cards that show a <mark>full, or alternate artwork</mark>. These are
+			<mark>classed as "rainbow rare"</mark>
+			and have a similar effect to the rainbow cards. It's a really
+			<mark>vibrant and glittery overlay</mark>.</p> <p>This is achieved with a <mark>background image of glitter/sparkles</mark>, and a texture pattern
+			background image, sandwiching the usual linear gradients.</p> <section class="card-grid svelte-1e57r8c"><div class="card psychic / interactive loading masked" data-number="270" data-set="swsh8" data-subtypes="vmax" data-supertype="pokémon" data-rarity="rare rainbow alt" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Espeon VMAX." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.09696645555625605;
+    --seedy: 0.7815932078387428;
+    --cosmosbg: 71px 1000px;
+  "><img src="https://images.pokemontcg.io/swsh8/270_hires.png" alt="Front design of the Espeon VMAX Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card darkness / interactive loading masked" data-number="271" data-set="swsh8" data-subtypes="vmax single strike" data-supertype="pokémon" data-rarity="rare rainbow alt" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Gengar VMAX." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.9212128199001705;
+    --seedy: 0.42875615414234236;
+    --cosmosbg: 676px 548px;
+  "><img src="https://images.pokemontcg.io/swsh8/271_hires.png" alt="Front design of the Gengar VMAX Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card darkness / interactive loading masked" data-number="215" data-set="swsh7" data-subtypes="vmax single strike" data-supertype="pokémon" data-rarity="rare rainbow alt" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Umbreon VMAX." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.2667319487639225;
+    --seedy: 0.290762709404625;
+    --cosmosbg: 195px 372px;
+  "><img src="https://images.pokemontcg.io/swsh7/215_hires.png" alt="Front design of the Umbreon VMAX Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-v-star"><a href="#⚓-v-star">VStar</a></h2> <p>Again back to the <mark>diagonal gradients overlaying a texture</mark>, VStar are quite
+			<mark>similar to the Ultra Rare</mark>
+			(Full/Alt) cards. The cards are generally <mark>brighter with a pastel hue</mark>, though, which
+			makes the gradient and texture more subtle.</p> <section class="card-grid svelte-1e57r8c"><div class="card psychic / interactive loading masked" data-number="31" data-set="pgo" data-subtypes="vstar" data-supertype="pokémon" data-rarity="rare holo vstar" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Mewtwo VSTAR." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.1019246672228491;
+    --seedy: 0.8853666423230755;
+    --cosmosbg: 74px 1133px;
+  "><img src="https://images.pokemontcg.io/pgo/31_hires.png" alt="Front design of the Mewtwo VSTAR Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card fighting / interactive loading masked" data-number="swsh214" data-set="swshp" data-subtypes="vstar" data-supertype="pokémon" data-rarity="rare holo vstar" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Lucario VSTAR." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.06946586513391384;
+    --seedy: 0.45946044052955437;
+    --cosmosbg: 50px 588px;
+  "><img src="https://images.pokemontcg.io/swshp/SWSH214_hires.png" alt="Front design of the Lucario VSTAR Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card fire / interactive loading masked" data-number="18" data-set="swsh9" data-subtypes="vstar" data-supertype="pokémon" data-rarity="rare holo vstar" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Charizard VSTAR." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.4287769839062816;
+    --seedy: 0.706654986709029;
+    --cosmosbg: 314px 904px;
+  "><img src="https://images.pokemontcg.io/swsh9/18_hires.png" alt="Front design of the Charizard VSTAR Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-trainer-full-art"><a href="#⚓-trainer-full-art">Trainer Holo <sup>(Full Art / Trainer Gallery)</sup></a></h2> <p>Again back to the <mark>diagonal gradients overlaying a texture</mark>, VStar are quite
+			<mark>similar to the Ultra Rare</mark>
+			(Full/Alt) cards. The cards are generally <mark>brighter with a pastel hue</mark>, though, which
+			makes the gradient and texture more subtle.</p> <section class="card-grid svelte-1e57r8c"><div class="card / interactive loading masked" data-number="196" data-set="swsh6" data-subtypes="supporter" data-supertype="trainer" data-rarity="rare ultra" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Peonia." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.7815905889533342;
+    --seedy: 0.14727382048027593;
+    --cosmosbg: 573px 188px;
+  "><img src="https://images.pokemontcg.io/swsh6/196_hires.png" alt="Front design of the Peonia Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="167" data-set="swsh9" data-subtypes="supporter" data-supertype="trainer" data-rarity="rare ultra" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Barry." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.2540211289344758;
+    --seedy: 0.7260747986510985;
+    --cosmosbg: 186px 929px;
+  "><img src="https://images.pokemontcg.io/swsh9/167_hires.png" alt="Front design of the Barry Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="200" data-set="swsh1" data-subtypes="supporter" data-supertype="trainer" data-rarity="rare ultra" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Marnie." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.45807284751880417;
+    --seedy: 0.5010975957334441;
+    --cosmosbg: 336px 641px;
+  "><img src="https://images.pokemontcg.io/swsh1/200_hires.png" alt="Front design of the Marnie Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="tg27" data-set="swsh11tg" data-subtypes="supporter" data-supertype="trainer" data-rarity="rare ultra" data-trainer-gallery="true" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Nessa." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.04421341341053775;
+    --seedy: 0.13896127441840445;
+    --cosmosbg: 32px 177px;
+  "><img src="https://images.pokemontcg.io/swsh11tg/TG27_hires.png" alt="Front design of the Nessa Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="tg26" data-set="swsh12tg" data-subtypes="supporter" data-supertype="trainer" data-rarity="rare ultra" data-trainer-gallery="true" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Professor Burnet." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.06464138268919373;
+    --seedy: 0.8460684919433098;
+    --cosmosbg: 47px 1082px;
+  "><img src="https://images.pokemontcg.io/swsh12tg/TG26_hires.png" alt="Front design of the Professor Burnet Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="tg26" data-set="swsh11tg" data-subtypes="supporter" data-supertype="trainer" data-rarity="rare ultra" data-trainer-gallery="true" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Kabu." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.46328684618166616;
+    --seedy: 0.8623465834187934;
+    --cosmosbg: 340px 1103px;
+  "><img src="https://images.pokemontcg.io/swsh11tg/TG26_hires.png" alt="Front design of the Kabu Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-rainbow-rare"><a href="#⚓-rainbow-rare">Rainbow Rare <sup>(VMax, VStar)</sup></a></h2> <p>The Rainbow Rare is a <mark>super glittery effect on top of pastel gradients</mark>. This is
+			achieved with a background image of glitter/sparkles and a
+			<mark>color-burn/hard-light background blend</mark> for some pastel gradients.</p> <section class="card-grid svelte-1e57r8c"><div class="card lightning / interactive loading masked" data-number="188" data-set="swsh4" data-subtypes="vmax" data-supertype="pokémon" data-rarity="rare rainbow" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Pikachu VMAX." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.23372506887897393;
+    --seedy: 0.4859776024298844;
+    --cosmosbg: 171px 622px;
+  "><img src="https://images.pokemontcg.io/swsh4/188_hires.png" alt="Front design of the Pikachu VMAX Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card water / interactive loading masked" data-number="197" data-set="swsh12" data-subtypes="vstar" data-supertype="pokémon" data-rarity="rare rainbow" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Alolan Vulpix VSTAR." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.6910760362336029;
+    --seedy: 0.5847155270981831;
+    --cosmosbg: 507px 748px;
+  "><img src="https://images.pokemontcg.io/swsh12/197_hires.png" alt="Front design of the Alolan Vulpix VSTAR Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="204" data-set="swsh10" data-subtypes="supporter" data-supertype="trainer" data-rarity="rare rainbow" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Irida." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.4955807158762825;
+    --seedy: 0.756992836824281;
+    --cosmosbg: 363px 968px;
+  "><img src="https://images.pokemontcg.io/swsh10/204_hires.png" alt="Front design of the Irida Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card psychic / interactive loading masked" data-number="268" data-set="swsh8" data-subtypes="vmax fusion strike" data-supertype="pokémon" data-rarity="rare rainbow" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Mew VMAX." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.8551271436698156;
+    --seedy: 0.25941042289811045;
+    --cosmosbg: 627px 332px;
+  "><img src="https://images.pokemontcg.io/swsh8/268_hires.png" alt="Front design of the Mew VMAX Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card psychic / interactive loading masked" data-number="175" data-set="swsh9" data-subtypes="vstar" data-supertype="pokémon" data-rarity="rare rainbow" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Whimsicott VSTAR." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.13750073113322514;
+    --seedy: 0.31360998054703515;
+    --cosmosbg: 100px 401px;
+  "><img src="https://images.pokemontcg.io/swsh9/175_hires.png" alt="Front design of the Whimsicott VSTAR Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="205" data-set="swsh12" data-subtypes="supporter" data-supertype="trainer" data-rarity="rare rainbow" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Furisode Girl." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.4568537508892425;
+    --seedy: 0.7670916173900645;
+    --cosmosbg: 335px 981px;
+  "><img src="https://images.pokemontcg.io/swsh12/205_hires.png" alt="Front design of the Furisode Girl Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-secret-rare"><a href="#⚓-secret-rare">Secret Rare <sup>(Gold)</sup></a></h2> <p><mark>GOLD!</mark> Here we apply two glitter layers on top of each other with a overlay effect and
+		<mark>slide the two layers in opposite directions</mark>. We also <mark>mask the foil image</mark> with a gadient so
+		that foil and glitter layers are mutually exclusive. The resulting effect is a shimmering glitter layer!</p> <section class="card-grid svelte-1e57r8c"><div class="card / interactive loading masked" data-number="209" data-set="swsh2" data-subtypes="special" data-supertype="energy" data-rarity="rare secret" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Twin Energy." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.6797521256669905;
+    --seedy: 0.29213155837571947;
+    --cosmosbg: 498px 373px;
+  "><img src="https://images.pokemontcg.io/swsh2/209_hires.png" alt="Front design of the Twin Energy Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="186" data-set="swsh9" data-subtypes="item" data-supertype="trainer" data-rarity="rare secret" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Ultra Ball." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.36437388953884997;
+    --seedy: 0.4645915484903336;
+    --cosmosbg: 267px 594px;
+  "><img src="https://images.pokemontcg.io/swsh9/186_hires.png" alt="Front design of the Ultra Ball Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card / interactive loading masked" data-number="213" data-set="swsh10" data-subtypes="stadium" data-supertype="trainer" data-rarity="rare secret" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Path to the Peak." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.20573772444149274;
+    --seedy: 0.2534822237800386;
+    --cosmosbg: 151px 324px;
+  "><img src="https://images.pokemontcg.io/swsh10/213_hires.png" alt="Front design of the Path to the Peak Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card lightning / interactive loading masked" data-number="280" data-set="swsh8" data-subtypes="stage 1" data-supertype="pokémon" data-rarity="rare secret" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Flaaffy." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.2755419252332303;
+    --seedy: 0.1722370583927746;
+    --cosmosbg: 202px 220px;
+  "><img src="https://images.pokemontcg.io/swsh8/280_hires.png" alt="Front design of the Flaaffy Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card colorless / interactive loading masked" data-number="184" data-set="swsh9" data-subtypes="vstar" data-supertype="pokémon" data-rarity="rare secret" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Arceus VSTAR." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.38178575557472083;
+    --seedy: 0.7273851594050269;
+    --cosmosbg: 280px 931px;
+  "><img src="https://images.pokemontcg.io/swsh9/184_hires.png" alt="Front design of the Arceus VSTAR Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card psychic / interactive loading masked" data-number="tg30" data-set="swsh11tg" data-subtypes="vmax fusion strike" data-supertype="pokémon" data-rarity="rare secret" data-trainer-gallery="true" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Mew VMAX." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.12878584649509073;
+    --seedy: 0.23067922971759602;
+    --cosmosbg: 94px 295px;
+  "><img src="https://images.pokemontcg.io/swsh11tg/TG30_hires.png" alt="Front design of the Mew VMAX Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-trainer-gallery-v"><a href="#⚓-trainer-gallery-v">Trainer Gallery <sup>(V / VMax)</sup></a></h2> <p>The V and VMax cards in the Trainer Gallery are generally quite similar to the normal V and VMax
+			cards, so here I've just tweaked the values a little and added a different background texture.</p> <section class="card-grid svelte-1e57r8c"><div class="card psychic / interactive loading masked" data-number="tg16" data-set="swsh9tg" data-subtypes="basic v" data-supertype="pokémon" data-rarity="rare holo v" data-trainer-gallery="true" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Mimikyu V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.8051630062599664;
+    --seedy: 0.47727829927397136;
+    --cosmosbg: 590px 610px;
+  "><img src="https://images.pokemontcg.io/swsh9tg/TG16_hires.png" alt="Front design of the Mimikyu V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card fighting / interactive loading masked" data-number="tg18" data-set="swsh9tg" data-subtypes="basic v single strike" data-supertype="pokémon" data-rarity="rare holo v" data-trainer-gallery="true" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Single Strike Urshifu V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.8217877626033533;
+    --seedy: 0.08054277152473843;
+    --cosmosbg: 603px 103px;
+  "><img src="https://images.pokemontcg.io/swsh9tg/TG18_hires.png" alt="Front design of the Single Strike Urshifu V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card lightning / interactive loading masked" data-number="tg16" data-set="swsh11tg" data-subtypes="basic v" data-supertype="pokémon" data-rarity="rare holo v" data-trainer-gallery="true" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Pikachu V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.10258243826030944;
+    --seedy: 0.2699791545782747;
+    --cosmosbg: 75px 345px;
+  "><img src="https://images.pokemontcg.io/swsh11tg/TG16_hires.png" alt="Front design of the Pikachu V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card psychic / interactive loading masked" data-number="tg17" data-set="swsh9tg" data-subtypes="vmax" data-supertype="pokémon" data-rarity="rare holo vmax" data-trainer-gallery="true" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Mimikyu VMAX." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.5917204358363435;
+    --seedy: 0.13420032720976804;
+    --cosmosbg: 434px 171px;
+  "><img src="https://images.pokemontcg.io/swsh9tg/TG17_hires.png" alt="Front design of the Mimikyu VMAX Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card fighting / interactive loading masked" data-number="tg19" data-set="swsh9tg" data-subtypes="vmax single strike" data-supertype="pokémon" data-rarity="rare holo vmax" data-trainer-gallery="true" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Single Strike Urshifu VMAX." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.5867740079238976;
+    --seedy: 0.34979199520521165;
+    --cosmosbg: 430px 447px;
+  "><img src="https://images.pokemontcg.io/swsh9tg/TG19_hires.png" alt="Front design of the Single Strike Urshifu VMAX Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card lightning / interactive loading masked" data-number="tg17" data-set="swsh11tg" data-subtypes="vmax" data-supertype="pokémon" data-rarity="rare holo vmax" data-trainer-gallery="true" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Pikachu VMAX." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.36300105755959633;
+    --seedy: 0.7293220459588322;
+    --cosmosbg: 266px 933px;
+  "><img src="https://images.pokemontcg.io/swsh11tg/TG17_hires.png" alt="Front design of the Pikachu VMAX Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section> <h2 id="⚓-shiny-vault"><a href="#⚓-shiny-vault">Shiny Vault <sup>(Basic / Stage 1 / V / VMax)</sup></a></h2> <p>Shiny Vault cards have quite a unique effect in whereby the foil background is a shiny silver
+			color. To achieve this we apply the foil image with some radial gradients to darken the foil
+			over the background. This creates a slightly silver effect on top of the white card background.
+			This effect works best in Firefox.</p> <section class="card-grid svelte-1e57r8c"><div class="card colorless / interactive loading masked" data-number="sv093" data-set="swsh45sv" data-subtypes="basic" data-supertype="pokémon" data-rarity="rare shiny" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Minccino." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.5749651740368598;
+    --seedy: 0.0010420278420975038;
+    --cosmosbg: 422px 1px;
+  "><img src="https://images.pokemontcg.io/swsh45sv/SV093_hires.png" alt="Front design of the Minccino Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card colorless / interactive loading masked" data-number="sv094" data-set="swsh45sv" data-subtypes="stage 1" data-supertype="pokémon" data-rarity="rare shiny" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Cinccino." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.6012867738482376;
+    --seedy: 0.743348259431478;
+    --cosmosbg: 441px 951px;
+  "><img src="https://images.pokemontcg.io/swsh45sv/SV094_hires.png" alt="Front design of the Cinccino Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card water / interactive loading masked" data-number="sv110" data-set="swsh45sv" data-subtypes="basic v" data-supertype="pokémon" data-rarity="rare shiny v" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Lapras V." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.5812869907510301;
+    --seedy: 0.1923660169083552;
+    --cosmosbg: 426px 246px;
+  "><img src="https://images.pokemontcg.io/swsh45sv/SV110_hires.png" alt="Front design of the Lapras V Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card water / interactive loading masked" data-number="sv023" data-set="swsh45sv" data-subtypes="basic" data-supertype="pokémon" data-rarity="rare shiny" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Galarian Darumaka." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.9267534356590318;
+    --seedy: 0.9778869330620155;
+    --cosmosbg: 680px 1251px;
+  "><img src="https://images.pokemontcg.io/swsh45sv/SV023_hires.png" alt="Front design of the Galarian Darumaka Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card darkness / interactive loading masked" data-number="sv076" data-set="swsh45sv" data-subtypes="basic" data-supertype="pokémon" data-rarity="rare shiny" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Koffing." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.4117501368764753;
+    --seedy: 0.29135547283059193;
+    --cosmosbg: 302px 372px;
+  "><img src="https://images.pokemontcg.io/swsh45sv/SV076_hires.png" alt="Front design of the Koffing Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div><div class="card fire / interactive loading masked" data-number="sv107" data-set="swsh45sv" data-subtypes="vmax" data-supertype="pokémon" data-rarity="rare shiny vmax" data-trainer-gallery="false" style="
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    --pointer-from-center: 0;
+    --pointer-from-top: 0.5;
+    --pointer-from-left: 0.5;
+    --card-opacity: 0;
+    --rotate-x: 0deg;
+    --rotate-y: 0deg;
+    --background-x: 50%;
+    --background-y: 50%;
+    --card-scale: 1;
+    --translate-x: 0px;
+    --translate-y: 0px;
+	"><div class="card__translater"><button class="card__rotator" aria-label="Expand the Pokemon Card; Charizard VMAX." tabindex="0"><img class="card__back" src="https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg" alt="The back of a Pokemon Card, a Pokeball in the center with Pokemon logo above and below" loading="lazy" width="660" height="921"> <div class="card__front" style="
+    --seedx: 0.8888770045947547;
+    --seedy: 0.9866148631729897;
+    --cosmosbg: 652px 1262px;
+  "><img src="https://images.pokemontcg.io/swsh45sv/SV107_hires.png" alt="Front design of the Charizard VMAX Pokemon Card, with the stats and info around the edge" loading="lazy" width="660" height="921"> <div class="card__shine"></div> <div class="card__glare"></div></div></button></div></div></section></main> <div class="back-to-top svelte-71964w"><a href="#⚓-top" class="svelte-71964w">Back to Top</a></div></div>
+    
+
+	
+
+</body></html>
