@@ -18,37 +18,52 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Audiowide&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 
-<body  class="min-h-screen bg-[linear-gradient(180deg,#000000_0%,#000000_33%,#0D7377_62%,#14FFEC_100%)]">
-    <header>
-        <nav class="flex text-lg  justify-between text-white bg-black items-center h-10 fixed w-full ">
-            <div class="text- pl-2">
-                <a href="#">cybercard</a>
+<body class="min-h-screen bg-[linear-gradient(180deg,#000000_0%,#000000_33%,#0D7377_62%,#14FFEC_100%)]">
+<header>
+        <nav
+            class="flex text-meduim justify-around  bg-black  font-[Audiowide]  text-white  items-center h-20 fixed w-full mt-0 ">
+            <div class=" pl-0 my-0">
+
+                <img class="h-[50px] w-[274px]" src="/img/logo.png">
+
+            </div>    
+
+            <div class="flex  pr-10 gap-x-12 font-medium  ">
+                 <a class="hover:text-[#0bcfd6]" href=" #">home</a>
+                <a class="hover:text-[#0bcfd6]" href=" #">play</a>
+                <a class="hover:text-[#0bcfd6]" href="guide.html">guid</a>
+                <a class="hover:text-[#0bcfd6]" href="#">shop</a>
+                <a class="hover:text-[#0bcfd6]" href="#">collection</a>
+                <a class="hover:text-[#0bcfd6]" href="#">favourite</a>
+
 
             </div>
-
-            <div class="flex  pr-10 gap-x-12 font-meduim  W-20">
-                <a href=" #">play</a>
-                <a href=" #">guid</a>
-                <a href="#">shop</a>
-                <a href="#">collection</a>
-                <a href="#">favourite</a>
-                <a href="#">sign in</a>
-                <a><i class="fa-solid fa-cart-shopping " style="color:white "></i></a>
+            <div class="flex gap-4">
+                <a class="hover:text-[#0bcfd6]" href="#">sign in</a>
+                <a><i class="fa-solid fa-cart-shopping hover:text-[#0bcfd6]" style="color:white "></i></a>
             </div>
-
-
         </nav>
 
     </header>
 
-    <section>
-        <div class="flex justify-between items-center   font-[Outfit] ">
+    <section class=" pt-[100px]">
+        <div class="flex justify-around items-center   font-[Audiowide]  w-full ">
+
+            <div>
+                <img src="img/upscalemedia-transformed.png" class="animate-pulse duration-10 ">
+            </div>
+
             <div class="flex items-center flex-col  gap-[50px] justify-center text-white mx-20">
                 <H2 class=" text-5xl ">Beautifaul game, <br></H2>
 
@@ -61,19 +76,18 @@
                 <div class="flex gap-[30px] ">
 
                     <button
-                        class="bg-[#0D7377] text-white py-[12px] px-[60px] rounded-[12px] hover:bg-[#0a5c5f] transition shadow-[white   ]">play
+                        class="border-2 border-white bg-[#0D7377] text-white py-[12px] px-[60px] rounded-[12px] hover:bg-[#0bcfd6] transition shadow-[white ] ">play
                         now</button>
 
-                    <button
-                        class="bg-black text-white py-[12px] px-[60px] rounded-[12px] border-2 border-[#0D7377]  duration-200 hover:shadow-md hover:shadow-[#0D7377]/100 ">game
-                        guid</button>
+                    <a href="guide.html"
+                        class="bg-black text-white py-[12px] px-[60px] rounded-[12px] border-2 border-[#0D7377] duration-200 hover:shadow-md hover:shadow-[#0D7377] hover:bg-white/20 hover:text-black">
+                        Game Guide
+                    </a>
                 </div>
 
 
             </div>
-            <div>
-                <img src="img/digital_girl.png" class="h-50px my-0">
-            </div>
+
 
 
         </div>
@@ -84,62 +98,38 @@
     <section>
 
 
-    <h1 class="flex justify-center font-bold text-6xl my-20  text-[white] font-[Outfit]">Explore New Cards</h1>
+        <h1 class="flex justify-center font-bold text-6xl mt-20 mb-40 text-[white] font-[Audiowide]">Explore New Cards</h1>
 
-<div class="flex justify-center gap-[168Px]">
-<img class="h-80" src="img/queen.png">
-<img class="h-80" src="img/queen.png">
-<img class="h-80" src="img/queen.png">
-<img class="h-80"src="img/queen.png">
+        <div class="flex justify-center gap-[168Px] ">
+            <img class="h-80" src="img/specter-removebg-preview.png">
+            <img class="h-80" src="img/hackerG.png">
+            <img class="h-80" src="img/nanoG.png">
+            <img class="h-80" src="img/samurai 2.png">
 
-</div>
+        </div>
     </section>
 
-    <section>
+   <section class="flex mt-40 justify-evenly mb-10 max-w-7xl mx-auto"> 
 
-<div>
-    <img src="img/avif.png">
-</div>
-<div>
-    <h3>Start your Collection</h3>
-    <p>dive into a world of adventure and rares treasures.begin your
-        collection today and discover the cardes that makes your story uniques  </p>
-</div>
+    <div class="w-1/2 flex justify-center">
+        <img src="img/wolf_3.png" class="max-w-lg" alt="Wolf Character">
+    </div>
 
-    </section>
+    <div class="w-1/2 flex flex-col items-center justify-center font-[Audiowide] text-center p-4">
+        
+        <div class="max-w-md"> 
+            <h3 class="text-white text-4xl font-medium">Start your Collection</h3>
+            
+            <p class="text-white text-xl mt-10">
+                dive into a world of adventure and rare treasures. begin your
+                collection today and discover the cards that makes your story unique
+            </p>
+            
+            <button class="bg-black text-white w-[200px] h-[70px] rounded-xl mt-10 border-2 border-[white] shadow-md ">get started</button>
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</section>
 
     <footer class="flex flex-row gap-4 justify-evenly bg-black h-60 text-white">
 
@@ -196,7 +186,7 @@
                 costumer Service
             </p>
         </div>
-        </div>
+
 
 
 
