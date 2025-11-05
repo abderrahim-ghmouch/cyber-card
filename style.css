@@ -1,0 +1,30 @@
+.slider {
+  display: flex;
+  overflow-x: auto;
+}
+.slider::-webkit-scrollbar {
+  display: none;
+}
+.slider-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  animation: spin 8s infinite linear;
+  padding-right: 1em;
+}
+.slider-group img {
+  height: 5em;
+  
+  flex: 0 0 5em;
+  padding: 1em;
+  
+}
+@keyframes spin {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: -100%;
+  }
+}
