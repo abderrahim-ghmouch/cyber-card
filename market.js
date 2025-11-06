@@ -83,33 +83,39 @@ let filter = "all"
 
 document.querySelectorAll("#types button").forEach((e) => {
   e.addEventListener("click", (e) => {
-    printCards(e.target.dataset.type);
+    page = 1
     filter = e.target.dataset.type;
+    printCards(e.target.dataset.type);
   });
 });
 
 document.getElementById("left-pagination").addEventListener("click", (e) => {
   if (page == 1) {
-    alert("you are in the end of left pagination")
+    alert("you are in the end of left pagination");
   } else {
     page--;
     printCards(filter);
+
+    printCards();
+    btnFavEvent();
+    btnAddEvent();
   }
-  
 });
 
 document.getElementById("right-pagination").addEventListener("click", (e) => {
-    if (page == Math.ceil(count / 3)) {
-      alert("you are in the end of left pagination")
+  if (page == Math.ceil(count / 3)) {
+    alert("you are in the end of left pagination");
+  } else {
+    page++;
+    printCards(filter);
 
-    } else {
-      page++;
-      printCards(filter);
-    }
+    btnFavEvent();
+    btnAddEvent();
+  }
 });
 
-
 function printCards(filter = "all") {
+  console.log(page)
   cardsSection.innerHTML = "";
 
   let start = (page - 1) * perPage; //3
@@ -117,6 +123,7 @@ function printCards(filter = "all") {
   for (let i = start; i < start + perPage; i++) {
 
     let el = data[i];
+
     if (el.type == filter || filter == "all") {
       cardsSection.innerHTML =
         cardsSection.innerHTML +
@@ -147,32 +154,9 @@ function printCards(filter = "all") {
     `;
     }
   }
+}
 
-  document.querySelectorAll(".btn-add").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const id = e.target.dataset.id;
-      let notFound = true;
-
-      for (const ob of cart) {
-        if (ob.id == id) {
-          notFound = false;
-          break;
-        }
-      }
-
-      if (notFound) {
-        let add = data.find((e) => {
-          return e.id == id;
-        });
-
-        add["quantity"] = 1;
-
-        cart.push(add);
-        localStorage.setItem("cart", JSON.stringify(cart));
-      }
-    });
-  });
-
+function btnFavEvent() {
   document.querySelectorAll(".btn-fav").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const id = e.target.dataset.id;
@@ -197,4 +181,33 @@ function printCards(filter = "all") {
   });
 }
 
+function btnAddEvent() {
+  document.querySelectorAll(".btn-add").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const id = e.target.dataset.id;
+      let notFound = true;
+
+      for (const ob of cart) {
+        if (ob.id == id) {
+          notFound = false;
+          break;
+        }
+      }
+
+      if (notFound) {
+        let add = data.find((e) => {
+          return e.id == id;
+        });
+
+        add["quantity"] = 1;
+
+        cart.push(add);
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+    });
+  });
+}
+
 printCards();
+btnFavEvent();
+btnAddEvent();
