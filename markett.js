@@ -70,6 +70,7 @@ let data = [
     type: "common",
   },
 ];
+let filteredData = data;
 
 const cardsSection = document.getElementById("cards");
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -77,14 +78,24 @@ let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
 let page = 1;
 let perPage = 3;
-let count = data.length;
+let count = filteredData.length;
 let filter = "all";
+
 // type = ["all", "epic", "common", "rare", "legend"];
 
-document.querySelectorAll("#types button").forEach((e) => {
+let buttons = document.querySelectorAll("#types button");
+buttons.forEach((e) => {
   e.addEventListener("click", (e) => {
+    buttons.forEach((b) => b.classList.remove("active-type"));
+    e.target.classList.add("active-type");
+
     page = 1;
     filter = e.target.dataset.type;
+    if (filter == "all") {
+      filteredData = data;
+    } else {
+      filteredData = data.filter((e) => e.type == filter);
+    }
     printCards(e.target.dataset.type);
   });
 });
@@ -103,8 +114,9 @@ document.getElementById("left-pagination").addEventListener("click", (e) => {
 });
 
 document.getElementById("right-pagination").addEventListener("click", (e) => {
+  count = filteredData.length;
   if (page == Math.ceil(count / 3)) {
-    alert("you are in the end of left pagination");
+    alert("you are in the end of right pagination");
   } else {
     page++;
     printCards(filter);
@@ -115,16 +127,15 @@ document.getElementById("right-pagination").addEventListener("click", (e) => {
 });
 
 function printCards(filter = "all") {
-  console.log(page);
   cardsSection.innerHTML = "";
 
   let start = (page - 1) * perPage; //3
 
   for (let i = start; i < start + perPage; i++) {
-    let el = data[i];
+    let el = filteredData[i];
 
     if (el.type == filter || filter == "all") {
-     cardsSection.innerHTML += `
+      cardsSection.innerHTML += `
 <div class="flex flex-col bg-black shadow-2xl rounded-xl border-2 border-[#0bcfd6]
             hover:border-[#14FFEC] cursor-pointer w-full max-w-xs mx-auto">
 
@@ -150,7 +161,6 @@ function printCards(filter = "all") {
         </div>
     </div>
 </div>`;
-
     }
   }
 }
