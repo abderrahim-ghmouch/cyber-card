@@ -3,37 +3,37 @@ let data = [
     id: 1,
     name: "test",
     price: 100,
-    image: "/img/nanoG.png",
+    image: "./img/nanoG.png",
   },
   {
     id: 2,
     name: "test",
     price: 100,
-    image: "/img/samurai2.png ",
+    image: "./img/samurai2.png ",
   },
   {
     id: 3,
     name: "test",
     price: 100,
-    image: "/img/bow2.png",
+    image: "./img/bow2.png",
   },
   {
     id: 4,
     name: "test",
     price: 100,
-    image: "/img/bow2.png",
+    image: "./img/bow2.png",
   },
   {
     id: 5,
     name: "test",
     price: 100,
-    image: "/img/bow2.png",
+    image: "./img/bow2.png",
   },
   {
     id: 6,
     name: "test",
     price: 100,
-    image: "/img/wolf3.png",
+    image: "./img/wolf3.png",
   },
 ];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];

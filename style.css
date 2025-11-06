@@ -1,6 +1,5 @@
 .slider {
   overflow: hidden;
-  display: flex;
   width: 100%;
 }
 
@@ -8,26 +7,120 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  animation: slide 10s linear infinite;
+  width: max-content;
+  animation: slide 15s linear infinite;
 }
 
 .slider-group img {
-  height: 14rem; /* same as h-56 in Tailwind */
+  height: 14rem;
   object-fit: contain;
-  pointer-events: none; /* avoid drag while sliding */
+  pointer-events: none;
+  user-select: none;
 }
 
 @media (min-width: 768px) {
   .slider-group img {
-    height: 20rem; /* same as md:h-80 */
+    height: 20rem;
   }
 }
 
 @keyframes slide {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
-    transform: translateX(-100%);
+  100% {
+    transform: translateX(-50%);
   }
+}
+
+
+/* === HAMBURGER === */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    z-index: 200;
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    z-index: 2500;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 1rem 0;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: #a9b3ff;
+}
+
+/* === CLOSE BUTTON === */
+.close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #a9b3ff;
+}
+/* 
+=== HAMBURGER ANIMATION ===
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+} */
+
+
+@media (min-width: 768px) {
+  .hamburger {
+        display: none;
+    }
 }

@@ -31,32 +31,52 @@
 
 <body class="min-h-screen bg-black font-[Audiowide]">
 
-    <header>
-        <nav
-            class="flex text-meduim justify-around  bg-black  font-[Audiowide]  text-white  items-center h-20 fixed w-full mt-0 ">
-            <div class=" pl-0 my-0">
+      <!-- Header -->
+  <header class="fixed w-full top-0 left-0 bg-black z-50">
+    
+    <nav class="flex justify-between items-center h-20 px-6 text-white">
+      <!-- Logo -->
+      <img class="h-[50px] w-[180px] sm:w-[220px]" src="./img/logo.png" alt="Logo" />
 
-                <img class="h-[50px] w-[274px]" src="/img/logo.png">
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex gap-8 text-sm lg:text-base">
+        <a class="hover:text-[#0bcfd6]" href="index.html">Home</a>
+        <a class="hover:text-[#0bcfd6]" href="#">Play</a>
+        <a class="hover:text-[#0bcfd6]" href="#">Guide</a>
+        <a class="hover:text-[#0bcfd6]" href="market.html">Shop</a>
+        <a class="hover:text-[#0bcfd6]" href="collection.html">Collection</a>
+        <a class="hover:text-[#0bcfd6]" href="favourite.html">Favourite</a>
+      </div>
 
-            </div>
+      <!-- Desktop Icons -->
+      <div class="hidden md:flex gap-4 items-center">
+        <a class="hover:text-[#0bcfd6]" href="#">Sign in</a>
+        <a href="panier.html"><i class="fa-solid fa-cart-shopping hover:text-[#0bcfd6]"></i></a>
+      </div>
 
-            <div class="flex  pr-10 gap-x-12 font-medium  ">
-                <a class="hover:text-[#0bcfd6]" href="index.html">Home</a>
-                <a class="hover:text-[#0bcfd6]" href="">Play</a>
-                <a class="hover:text-[#0bcfd6]" href="guide.html">Guid</a>
-                <a class="hover:text-[#0bcfd6]" href="market.html">Shop</a>
-                <a class="hover:text-[#0bcfd6]" href="collection.html">Collection</a>
-                <a class="hover:text-[#0bcfd6]" href="favourite.html">Favourite</a>
+      <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
+    </nav>
 
-            </div>
-            <div class="flex gap-4">
-                <a class="hover:text-[#0bcfd6]" href="#">sign in</a>
-                <a href="panier.html"><i class="fa-solid fa-cart-shopping text-white hover:text-[#0bcfd6]"></i></a>
-            </div>
-        </nav>
+    <!-- Mobile Menu -->
 
-    </header>
+    <div class="sidebar">
+        <span class="close-btn hover:text-[#14FFEC]">&times;</span>
+        <a href="#">Home</a>
+            <a href="#">Play</a>
+            <a href="guide.html">Guid</a>
+            <a href="market.html">Shop</a>
+            <a href="contacts.html">Collection</a>
+            <a href="favourite.html">Favourite</a>
+            <a href="#">Sign up</a>
+            <a href="panier.html"><i class="fa-solid fa-cart-shopping hover:text-[#0bcfd6]"></i></a>
+    </div>
+
+  </header>
     <main>
 
 
@@ -138,7 +158,7 @@
             </div>
 
             <div class="flex flex-col items-center cursor-pointer lg:items-center  gap-5 ">
-                <img class="h-20 w-20" src="/img/footer-logopng.png">
+                <img class="h-20 w-20" src="./img/footer-logopng.png">
                 <h3 class="text-[#14FFEC] text-xl font-bold">Follow Us</h3>
                 <div class="flex gap-4 text-[#14FFEC] text-xl">
                     <i class="fa-brands fa-facebook-f"></i>
@@ -153,7 +173,7 @@
             copyright©2026 All rights reserved | cyber card
         </p>
     </footer>
-
+    <script src="humburger.js"></script>
     <script src="/panier.js"> </script>
 </body>
 
