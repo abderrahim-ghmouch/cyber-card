@@ -12,7 +12,7 @@
 }
 
 .slider-group img {
-  height: 14rem;
+  height: 20rem;
   object-fit: contain;
   pointer-events: none;
   user-select: none;
