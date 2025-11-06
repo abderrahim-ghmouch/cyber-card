@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,33 +28,131 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
-<body class="min-h-screen bg-[linear-gradient(180deg,#000000_0%,#000000_33%,#0D7377_62%,#14FFEC_100%)]">
-<header>
+
+<body class="min-h-screen bg-black font-[Audiowide]">
+
+    <header>
         <nav
             class="flex text-meduim justify-around  bg-black  font-[Audiowide]  text-white  items-center h-20 fixed w-full mt-0 ">
             <div class=" pl-0 my-0">
 
                 <img class="h-[50px] w-[274px]" src="/img/logo.png">
 
-            </div>    
+            </div>
 
             <div class="flex  pr-10 gap-x-12 font-medium  ">
-                 <a class="hover:text-[#0bcfd6]" href="index.html">Home</a>
-                <a class="hover:text-[#0bcfd6]" href=" #">Play</a>
-                <a class="hover:text-[#0bcfd6]" href="guide.html">Guide</a>
+                <a class="hover:text-[#0bcfd6]" href="index.html">Home</a>
+                <a class="hover:text-[#0bcfd6]" href="">Play</a>
+                <a class="hover:text-[#0bcfd6]" href="guide.html">Guid</a>
                 <a class="hover:text-[#0bcfd6]" href="market.html">Shop</a>
                 <a class="hover:text-[#0bcfd6]" href="collection.html">Collection</a>
-                <a class="hover:text-[#0bcfd6]" href="#">Favourite</a>
+                <a class="hover:text-[#0bcfd6]" href="favourite.html">Favourite</a>
 
 
             </div>
             <div class="flex gap-4">
-                <a class="hover:text-[#0bcfd6]" href="#">Sign in</a>
-                <a href="panier.html"><i class="fa-solid fa-cart-shopping text-white  hover:text-[#0bcfd6]"></i></a>
+                <a class="hover:text-[#0bcfd6]" href="#">sign in</a>
+                <a href="panier.html"><i class="fa-solid fa-cart-shopping text-white hover:text-[#0bcfd6]"></i></a>
             </div>
         </nav>
 
     </header>
+    <main>
 
+
+        <section>
+            <div class="flex flex-col justify-around items-center gap-10">
+                <div>
+                    <H1 class=" text-5xl text-white pt-32 font-[Audiowide] ">favorites</H1>
+
+                </div>
+
+                <!-- <div class="text-white font-[Audiowide] text-meduim text-sm flex gap-10 ">
+                    <button
+                        class=" border-4 border-[#00446E] px-14 py-5 rounded-2xl hover:bg-[#14FFEC] hover:text-black ">epic</button>
+
+                    <button
+                        class=" border-4 border-[#00446E] px-14 py-5 rounded-2xl hover:bg-[#14FFEC] hover:text-black">
+                        rare
+                    </button>
+
+                    <button
+                        class=" border-4 border-[#00446E] px-14 py-5 rounded-2xl hover:bg-[#14FFEC] hover:text-black">commun</button>
+
+                    <button
+                        class=" border-4 border-[#00446E] px-14 py-5 rounded-2xl hover:bg-[#14FFEC] hover:text-black">legend</button>
+
+                </div> -->
+            </div>
+
+        </section>
+
+        <section id="favorites" class="grid grid-cols-3 gap-x-12 gap-y-20 text-center md grid grid-cols-2">
+            
+            </section>
+
+        <section>
+
+            <div class="flex justify-center gap-4 mt-20 pb-20">
+                <button
+                    class="bg-[#0bcfd6] text-black w-10 h-10 rounded-full font-[Audiowide] hover:bg-[#14FFEC]">1</button>
+                <button
+                    class="bg-black text-white w-10 h-10 rounded-full font-[Audiowide] border-2 border-[#0bcfd6] hover:bg-[#14FFEC] hover:text-black">2</button>
+                <button
+                    class="bg-black text-white w-10 h-10 rounded-full font-[Audiowide] border-2 border-[#0bcfd6] hover:bg-[#14FFEC] hover:text-black">3</button>
+                <button
+                    class="bg-black text-white w-10 h-10 rounded-full font-[Audiowide] border-2 border-[#0bcfd6] hover:bg-[#14FFEC] hover:text-black">>></button>
+            </div>
+            </div>
+
+        </section>
+    </main>
+  
+    <footer class="bg-black text-white py-10 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center lg:text-left">
+
+            <div class="flex flex-col gap-[21px]">
+                <h4 class="text-[#14FFEC] font-bold">Company</h4>
+                <p class="text-[#0D7377]">About Us</p>
+                <p class="text-[#0D7377]">Our Services</p>
+                <p class="text-[#0D7377]">Privacy Policy</p>
+                <p class="text-[#0D7377]">Affiliate Programme</p>
+            </div>
+
+            <div class="flex flex-col gap-[21px]">
+                <h4 class="text-[#14FFEC] font-bold">Get Help</h4>
+                <p class="text-[#0D7377]">FAQ</p>
+                <p class="text-[#0D7377]">Contact Us</p>
+                <p class="text-[#0D7377]">Order Status</p>
+                <p class="text-[#0D7377]">Payment Options</p>
+            </div>
+
+            <div class="flex flex-col gap-[21px]">
+                <h4 class="text-[#14FFEC] font-bold">Support</h4>
+                <p class="text-[#0D7377]">Returns & Exchanges</p>
+                <p class="text-[#0D7377]">Technical Support</p>
+                <p class="text-[#0D7377]">Warranty Policy</p>
+                <p class="text-[#0D7377]">Customer Service</p>
+            </div>
+
+            <div class="flex flex-col items-center cursor-pointer lg:items-center  gap-5 ">
+                <img class="h-20 w-20" src="/img/footer-logopng.png">
+                <h3 class="text-[#14FFEC] text-xl font-bold">Follow Us</h3>
+                <div class="flex gap-4 text-[#14FFEC] text-xl">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitch"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="text-[#14FFEC] text-sm text-center mt-10">
+            copyright©2026 All rights reserved | cyber card
+        </p>
+    </footer>
+
+    <script src="/favorite.js"> </script>
 </body>
+
 </html>

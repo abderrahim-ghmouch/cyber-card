@@ -4,80 +4,155 @@ let data = [
     name: "test",
     price: 100,
     image: "/img/nanoG.png",
+    type: "legend",
   },
   {
     id: 2,
     name: "test",
     price: 100,
-    image: "/img/A-f.png",
+    image: "/img/nanoG.png ",
+    type: "epic",
   },
   {
     id: 3,
     name: "test",
     price: 100,
     image: "/img/bow2.png",
+    type: "common",
   },
   {
     id: 4,
     name: "test",
     price: 100,
     image: "/img/bow2.png",
+    type: "common",
   },
   {
     id: 5,
     name: "test",
     price: 100,
     image: "/img/bow2.png",
+    type: "common",
   },
   {
     id: 6,
     name: "test",
     price: 100,
-    image: "/img/bow2.png",
+    image: "/img/nanoG.png",
+    type: "common",
+  },
+  {
+    id: 7,
+    name: "test",
+    price: 100,
+    image: "/img/nanoG.png",
+    type: "common",
+  },
+  {
+    id: 8,
+    name: "test",
+    price: 100,
+    image: "/img/nanoG.png",
+    type: "common",
+  },
+  {
+    id: 9,
+    name: "test",
+    price: 100,
+    image: "/img/nanoG.png",
+    type: "common",
+  },
+  {
+    id: 10,
+    name: "test",
+    price: 100,
+    image: "/img/nanoG.png",
+    type: "common",
   },
 ];
 
-
-let favorites = [];
-
 const cardsSection = document.getElementById("cards");
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-function printCards() {
+let page = 1;
+let perPage = 3;
+let count = data.length;
+let filter = "all"
+// type = ["all", "epic", "common", "rare", "legend"];
+
+document.querySelectorAll("#types button").forEach((e) => {
+  e.addEventListener("click", (e) => {
+    printCards(e.target.dataset.type);
+    filter = e.target.dataset.type;
+  });
+});
+
+document.getElementById("left-pagination").addEventListener("click", (e) => {
+  if (page == 1) {
+    alert("you are in the end of left pagination")
+  } else {
+    page--;
+    printCards(filter);
+  }
+  
+});
+
+document.getElementById("right-pagination").addEventListener("click", (e) => {
+    if (page == Math.ceil(count / 3)) {
+      alert("you are in the end of left pagination")
+
+    } else {
+      page++;
+      printCards(filter);
+    }
+});
+
+
+function printCards(filter = "all") {
   cardsSection.innerHTML = "";
 
-  data.forEach((el) => {
-    cardsSection.innerHTML =
-      cardsSection.innerHTML +
-      `
-             <div
-                      class=" h-[80vh] bg-black shadow-2xl shadow-[#00F8FF]/60 rounded-lg border-2 border-[#0bcfd6] hover:border-[#0bcfd6] cursor-pointer  ">
-                      <img class="h-[60vh] rounded-t-lg hover:scale-105 " src=${el.image}>
-                      <div>
-                          <div class="flex justify-around m-y-4 font-[Audiowide] text-xl text-white">
-                              <h5>
-                              ${el.name}
-                              </h5>
-                              <h5>${el.price}$</h5>
-                          </div>
-                          <div class="flex justify-around mt-10 ">
-                              <button
-                              data-id="${el.id}"
-                                  class="btn-add font-[Audiowide] text-white  text-xs border-[#0D7377] border-2 p-2.5 rounded-md duration-200 hover:shadow-md hover:shadow-[#0D7377] hover:bg-[#14FFEC]  hover:text-black">
-                                  Add to cart</button>
-                              <i
-                                  class="fa-regular fa-heart text-[#0D7377] text-3xl duration-200  hover:text-white/20"></i>
-                          </div>
-                      </div>
-                  </div>
-  `;
-  });
+  let start = (page - 1) * perPage; //3
+
+  for (let i = start; i < start + perPage; i++) {
+
+    let el = data[i];
+    if (el.type == filter || filter == "all") {
+      cardsSection.innerHTML =
+        cardsSection.innerHTML +
+        `
+               <div
+                        class=" flex flex-col h-[80vh] w-[50vh] bg-black shadow-2xl  rounded-xl border-2 border-[#0bcfd6] hover:border-[#0bcfd6] cursor-pointer  ">
+                        <img class="h-[60vh]  hover:scale-103 " src=${el.image}>
+                        <div>
+                            <div class="flex justify-around my-4 font-[Audiowide] text-xl text-white">
+                                <h5>
+                                ${el.name}
+                                </h5>
+                                <h5>${el.price}$</h5>
+                            </div>
+                            <div class="flex justify-around mt-10 ">  
+                            <button
+                                data-id="${el.id}"
+                             
+                                    class="btn-add font-[Audiowide] text-white  text-xs border-[#0D7377] border-2 p-2.5 rounded-md duration-200 hover:shadow-md hover:shadow-[#0D7377] hover:bg-[#14FFEC]  hover:text-black">
+                                    Add to cart</button>
+    <button
+                                data-id="${el.id}"
+                                    class="btn-fav font-[Audiowide] text-white  text-xs border-[#0D7377] border-2 p-2.5 rounded-md duration-200 hover:shadow-md hover:shadow-[#0D7377] hover:bg-[#14FFEC]  hover:text-black">
+                                    Add to fav</button>
+                            </div>
+                        </div>
+                    </div>
+    `;
+    }
+  }
 
   document.querySelectorAll(".btn-add").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const id = e.target.dataset.id;
       let notFound = true;
 
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
       for (const ob of cart) {
         if (ob.id == id) {
           notFound = false;
@@ -90,15 +165,36 @@ function printCards() {
           return e.id == id;
         });
 
+        add["quantity"] = 1;
+
         cart.push(add);
         localStorage.setItem("cart", JSON.stringify(cart));
+      }
+    });
+  });
 
+  document.querySelectorAll(".btn-fav").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const id = e.target.dataset.id;
+      let notFound = true;
+
+      for (const ob of favorites) {
+        if (ob.id == id) {
+          notFound = false;
+          break;
+        }
+      }
+
+      if (notFound) {
+        let add = data.find((e) => {
+          return e.id == id;
+        });
+
+        favorites.push(add);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
       }
     });
   });
 }
-
-
-
 
 printCards();

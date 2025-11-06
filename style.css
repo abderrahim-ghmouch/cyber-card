@@ -1,30 +1,33 @@
 .slider {
+  overflow: hidden;
   display: flex;
-  overflow-x: auto;
+  width: 100%;
 }
-.slider::-webkit-scrollbar {
-  display: none;
-}
+
 .slider-group {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1em;
-  animation: spin 8s infinite linear;
-  padding-right: 1em;
+  gap: 2rem;
+  animation: slide 10s linear infinite;
 }
+
 .slider-group img {
-  height: 5em;
-  
-  flex: 0 0 5em;
-  padding: 1em;
-  
+  height: 14rem; /* same as h-56 in Tailwind */
+  object-fit: contain;
+  pointer-events: none; /* avoid drag while sliding */
 }
-@keyframes spin {
+
+@media (min-width: 768px) {
+  .slider-group img {
+    height: 20rem; /* same as md:h-80 */
+  }
+}
+
+@keyframes slide {
   from {
-    translate: 0;
+    transform: translateX(0);
   }
   to {
-    translate: -100%;
+    transform: translateX(-100%);
   }
 }

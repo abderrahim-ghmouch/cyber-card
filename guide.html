@@ -1,3 +1,7 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,148 +30,145 @@
     <title>Document</title>
 </head>
 
-<body
-    class="min-h-screen bg-[linear-gradient(180deg,#000000_0%,#000000_33%,#0D7377_62%,#14FFEC_100%)] font-[Audiowide]">
-    <header>
-        <nav
-            class="flex text-meduim justify-around  bg-black  font-[Audiowide]  text-white  items-center h-20 fixed w-full mt-0 ">
-            <div class=" pl-0 my-0">
+<body class="min-h-screen bg-[linear-gradient(180deg,#000000_0%,#000000_33%,#0D7377_62%,#14FFEC_100%)] font-[Audiowide]">
 
-                <img class="h-[50px] w-[274px]" src="/img/logo.png">
-
-            </div>
-
-            <div class="flex  pr-10 gap-x-12 font-medium  ">
-                <a class="hover:text-[#0bcfd6]" href="index.html">Home</a>
-                <a class="hover:text-[#0bcfd6]" href="#">Play</a>
-                <a class="hover:text-[#0bcfd6]" href="#">Guide</a>
-                <a class="hover:text-[#0bcfd6]" href="market.html">shop</a>
-                <a class="hover:text-[#0bcfd6]" href="collection.html">Collection</a>
-                <a class="hover:text-[#0bcfd6]" href="favourite.html">Favourite</a>
-
-
-            </div>
-            <div class="flex gap-4">
-                <a class="hover:text-[#0bcfd6]" href="#">Sign in</a>
-                <a href="panier.html"><i class="fa-solid fa-cart-shopping hover:text-[#0bcfd6]"
-                        style="color:white "></i></a>
-            </div>
-        </nav>
-
-    </header>
-    <section>
-        <div class="text-white flex flex-col gap-8 items-center ">
-            <div>
-                <h2 class="text-xl mt-40 ">Guide</h2>
-            </div>
-
-            <div class="grid grid-cols-3 justify-around gap-6 w- ">
-                <div
-                    class="border-2 p-4 h-[400px] rounded-lg text-center bg-[url('/img/y.png')] bg-cover bg-center">
-                    <h4 class="font-[Audiowide]">gamplay</h4>
-                    <p class="font-[Audiowide]">Lorem ipsum dolor sit,</p>
-                </div>
-
-                <div class="border-2 p-4 h-[400px] rounded-lg text-center bg-[url('/img/y.png')] bg-cover bg-center">
-                    <h4 class="font-[Audiowide]">Card 2</h4>
-                    <p class="font-[Audiowide]">Lorem ipsum dolor sit amet,</p>
-                </div>
-
-                <div class="border-2 p-4 h-[400px] rounded-lg text-center bg-[url('/img/y.png')] bg-cover bg-center">
-                    <h4 class="font-[Audiowide]">Card 3</h4>
-                    <p class="font-[Audiowide]">Lorem ipsum dolor sit amet,</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section >
-        <div class="flex  justify-evenly text-black text-extrabold  mt-40 mb-20">
-
+<header>
+    <nav class="flex justify-between items-center bg-black text-white fixed w-full h-20 px-4 md:px-10 z-50">
         
+    
+        <img class="h-[40px] md:h-[50px] w-auto" src="/img/logo.png">
 
-            <div class="flex flex-col  gap-20 font-[Audiowide] ">
-                <h2 class="text-6xl">FAQ </h2>
-<div class="flex flex-col gap-10"> <details>
-                    <summary>How can I start playing ?</summary>
-                    <p>bla bla bla</p>
-                </details>
-
-                <details>
-                    <summary>Are the cardes tradables ?</summary>
-                    <p>bla bla bla</p>
-                </details>
-
-                <details>
-                    <summary>is the game free to play ?</summary>
-                    <p>bla bla bla</p>
-                </details>
-
-
-                <details>
-                    <summary>What are card rarities ?</summary>
-                    rarity determines a card’s strength and scarcity
-                </details>
-
-
-</div>
-            
-
-            </div>
-
-            <img class="h-[400px]" src="/img/specter-removebg-preview.png">
+        <!-- Nav Links -->
+        <div class="hidden md:flex gap-6 font-medium">
+            <a class="hover:text-[#0bcfd6]" href="index.html">Home</a>
+            <a class="hover:text-[#0bcfd6]" href="#">Play</a>
+            <a class="hover:text-[#0bcfd6]" href="#">Guide</a>
+            <a class="hover:text-[#0bcfd6]" href="market.html">Shop</a>
+            <a class="hover:text-[#0bcfd6]" href="collection.html">Collection</a>
+            <a class="hover:text-[#0bcfd6]" href="favourite.html">Favourite</a>
         </div>
 
+        <!-- Right Side -->
+        <div class="hidden md:flex gap-4">
+            <a class="hover:text-[#0bcfd6]" href="#">Sign in</a>
+            <a href="panier.html">
+                <i class="fa-solid fa-cart-shopping hover:text-[#0bcfd6]"></i>
+            </a>
+        </div>
+
+        <!-- Mobile Menu Icon (not functional yet) -->
+        <button class="md:hidden text-white text-2xl">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+</header>
 
 
+<section class="pt-32 px-6 text-white text-center">
+    <h2 class="text-3xl mb-10">Guide</h2>
 
-  <footer class="bg-black text-white py-10 px-6">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center lg:text-left">
+    <!-- Responsive Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6 mx-auto max-w-6xl">
 
-    <div class="flex flex-col gap-[21px]">
-      <h4 class="text-[#14FFEC] font-bold">Company</h4>
-      <p class="text-[#0D7377]">About Us</p>
-      <p class="text-[#0D7377]">Our Services</p>
-      <p class="text-[#0D7377]">Privacy Policy</p>
-      <p class="text-[#0D7377]">Affiliate Programme</p>
+        <div class="border-2 p-6 h-[350px] rounded-lg bg-[url('/img/y.png')] bg-cover bg-center">
+            <h4>Gameplay</h4>
+            <p>Lorem ipsum dolor sit,</p>
+        </div>
+
+        <div class="border-2 p-6 h-[350px] rounded-lg bg-[url('/img/y.png')] bg-cover bg-center">
+            <h4>Card 2</h4>
+            <p>Lorem ipsum dolor sit amet,</p>
+        </div>
+
+        <div class="border-2 p-6 h-[350px] rounded-lg bg-[url('/img/y.png')] bg-cover bg-center">
+            <h4>Card 3</h4>
+            <p>Lorem ipsum dolor sit amet,</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="text-black mt-32 mb-20 px-6">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-16 max-w-6xl mx-auto">
+
+        <div class="flex flex-col gap-10 w-full lg:w-1/2">
+            <h2 class="text-4xl md:text-6xl font-[Audiowide]">FAQ</h2>
+
+            <details class="bg-white p-3 rounded">
+                <summary>How can I start playing?</summary>
+                <p>bla bla bla</p>
+            </details>
+
+            <details class="bg-white p-3 rounded">
+                <summary>Are the cards tradable?</summary>
+                <p>bla bla bla</p>
+            </details>
+
+            <details class="bg-white p-3 rounded">
+                <summary>Is the game free to play?</summary>
+                <p>bla bla bla</p>
+            </details>
+
+            <details class="bg-white p-3 rounded">
+                <summary>What are card rarities?</summary>
+                <p>Rarity determines a card’s strength and scarcity</p>
+            </details>
+        </div>
+
+        <img class="h-64 md:h-[400px] object-contain" src="/img/specter-removebg-preview.png">
+
+    </div>
+</section>
+
+
+<footer class="bg-black text-white py-10 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center lg:text-left">
+
+        <div class="flex flex-col gap-4">
+            <h4 class="text-[#14FFEC] font-bold">Company</h4>
+            <p class="text-[#0D7377]">About Us</p>
+            <p class="text-[#0D7377]">Our Services</p>
+            <p class="text-[#0D7377]">Privacy Policy</p>
+            <p class="text-[#0D7377]">Affiliate Programme</p>
+        </div>
+
+        <div class="flex flex-col gap-4">
+            <h4 class="text-[#14FFEC] font-bold">Get Help</h4>
+            <p class="text-[#0D7377]">FAQ</p>
+            <p class="text-[#0D7377]">Contact Us</p>
+            <p class="text-[#0D7377]">Order Status</p>
+            <p class="text-[#0D7377]">Payment Options</p>
+        </div>
+
+        <div class="flex flex-col gap-4">
+            <h4 class="text-[#14FFEC] font-bold">Support</h4>
+            <p class="text-[#0D7377]">Returns & Exchanges</p>
+            <p class="text-[#0D7377]">Technical Support</p>
+            <p class="text-[#0D7377]">Warranty Policy</p>
+            <p class="text-[#0D7377]">Customer Service</p>
+        </div>
+
+        <div class="flex flex-col items-center gap-5">
+            <img class="h-20 w-20" src="/img/footer-logopng.png">
+            <h3 class="text-[#14FFEC] text-xl font-bold">Follow Us</h3>
+            <div class="flex gap-4 text-[#14FFEC] text-xl">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitch"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+        </div>
+
     </div>
 
-    <div class="flex flex-col gap-[21px]">
-      <h4 class="text-[#14FFEC] font-bold">Get Help</h4>
-      <p class="text-[#0D7377]">FAQ</p>
-      <p class="text-[#0D7377]">Contact Us</p>
-      <p class="text-[#0D7377]">Order Status</p>
-      <p class="text-[#0D7377]">Payment Options</p>
-    </div>
-
-    <div class="flex flex-col gap-[21px]">
-      <h4 class="text-[#14FFEC] font-bold">Support</h4>
-      <p class="text-[#0D7377]">Returns & Exchanges</p>
-      <p class="text-[#0D7377]">Technical Support</p>
-      <p class="text-[#0D7377]">Warranty Policy</p>
-      <p class="text-[#0D7377]">Customer Service</p>
-    </div>
-
-    <div class="flex flex-col items-center lg:items-center gap-5">
-      <img class="h-20 w-20 cursor-pointer" src="/img/footer-logopng.png">
-      <h3 class="text-[#14FFEC] text-xl font-bold">Follow Us</h3>
-      <div class="flex gap-4 text-[#14FFEC] text-xl">
-        <i class="fa-brands fa-facebook-f"></i>
-        <i class="fa-brands fa-twitch"></i>
-        <i class="fa-brands fa-instagram"></i>
-      </div>
-    </div>
-
-  </div>
-
-  <p class="text-[#14FFEC] text-sm text-center mt-10">
-    copyright©2026 All rights reserved | cyber card
-  </p>
+    <p class="text-[#14FFEC] text-sm text-center mt-10">
+        copyright©2026 All rights reserved | cyber card
+    </p>
 </footer>
 
-
-
-
 </body>
+</html>
+
 
 </html>
