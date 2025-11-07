@@ -66,7 +66,7 @@ let data = [
     id: 10,
     name: "nano warior",
     price: 100,
-    image: "./img/nanoG .png",
+    image: "./img/nanoG.png",
     type: "common",
   },
 ];
