@@ -93,8 +93,8 @@ function printCart() {
       `
             <div
                     data-id="${el.id}"
-                    class="card h-[80vh] bg-black shadow-2xl shadow-[#00F8FF]/60 rounded-lg border-2 border-[#0bcfd6] hover:border-[#0bcfd6] cursor-pointer  ">
-                    <img class="h-[60vh] rounded-t-lg hover:scale-105 " src=${el.image}>
+                    class="card h-[80vh] flex  justify-center items-center flex-col bg-black shadow-2xl shadow-[#00F8FF]/60 rounded-lg border-2 border-[#0bcfd6] hover:border-[#0bcfd6] cursor-pointer  ">
+                    <img class="h-[55vh] w-[60%]  rounded-t-lg mt-5" src=${el.image}>
                     <div>
                           <div class="flex justify-around m-y-4 font-[Audiowide] text-xl text-white">
                               <h5>
@@ -104,13 +104,13 @@ function printCart() {
                           </div>
                           <div class="flex justify-around mt-10 ">
 
-                        <input data-id="${el.id}" value="${el.quantity}" min="1" max="10" type="number">
+                        <input class="text-white drop-shadow-[0_0_10px_#14FFEC] ml-5 w-[100px] h-[50px] mb-5 rounded-xl text-center bg-black"data-id="${el.id}" value="${el.quantity}" min="1" max="10" type="number">
 
 <button data-id="${el.id}" class="btn-col">
   Add to Collection
 </button>
 
-                          
+                          <div class="flex gap-4 mr-4 mb-10">
                           <button
                               data-id="${el.id}"
                            
@@ -121,6 +121,8 @@ function printCart() {
                               data-id="${el.id}"
                                   class="btn-fav font-[Audiowide] text-white  text-xs border-[#0D7377] border-2 p-2.5 rounded-md duration-200 hover:shadow-md hover:shadow-[#0D7377] hover:bg-[#14FFEC]  hover:text-black">
                                   Add to fav</button>
+                                  
+                                  </div>
                           </div>
                       </div>
                   </div>
@@ -133,11 +135,7 @@ function printCart() {
   document.getElementById("total").innerText = total;
 }
 
-// document.querySelectorAll(".btn-col").forEach((btn) => {
-//   btn.addEventListener("click", (e) => {
 
-//   });
-// });
 
 document.querySelectorAll(".btn-fav").forEach((btn) => {
   btn.addEventListener("click", (e) => {

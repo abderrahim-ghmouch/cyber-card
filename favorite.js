@@ -7,7 +7,11 @@ function printFavorites() {
   favoritesSection.innerHTML = "";
 
 if (favorites.length == 0) {
-    favoritesSection.innerHTML =  `<p class="text-white">nothing found</p>`;
+    favoritesSection.innerHTML =  `    <div class="w-full py-24 flex items-center justify-center">
+      <p class="text-[#14FFEC] text-2xl md:text-3xl font-bold text-center drop-shadow-[0_0_10px_#14FFEC]">
+        Nothing here for the moment 😴
+      </p>
+    </div> `;
   }
 
   favorites.forEach((el) => {
@@ -15,8 +19,8 @@ if (favorites.length == 0) {
       favoritesSection.innerHTML +
       `
             <div
-                    class=" h-[80vh] bg-black shadow-2xl shadow-[#00F8FF]/60 rounded-lg border-2 border-[#0bcfd6] hover:border-[#0bcfd6] cursor-pointer  ">
-                    <img class="h-[60vh] rounded-t-lg hover:scale-105 " src=${el.image}>
+                    class=" h-[80vh] bg-black w-[270px] shadow-2xl shadow-[#00F8FF]/60 rounded-lg border-2 border-[#0bcfd6] hover:border-[#0bcfd6] cursor-pointer  ">
+                    <img class="h-[60vh] rounded-t-lg " src=${el.image}>
                     <div>
                           <div class="flex justify-around m-y-4 font-[Audiowide] text-xl text-white">
                               <h5>

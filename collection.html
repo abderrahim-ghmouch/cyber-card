@@ -31,24 +31,24 @@
 
 <body class="min-h-screen bg-black font-[Audiowide]">
 
-     <!-- Header -->
+   
   <header class="fixed w-full top-0 left-0 bg-black z-50">
     
     <nav class="flex justify-between items-center h-20 px-6 text-white">
-      <!-- Logo -->
-      <img class="h-[50px] w-[180px] sm:w-[220px]" src="./img/logo.png" alt="Logo" />
+     
+      <img class="h-[50px] w-[180px] sm:w-[220px] " src="./img/logo.png" alt="Logo" />
 
-      <!-- Desktop Menu -->
+      
       <div class="hidden md:flex gap-8 text-sm lg:text-base">
         <a class="hover:text-[#0bcfd6]" href="index.html">Home</a>
         <a class="hover:text-[#0bcfd6]" href="#">Play</a>
         <a class="hover:text-[#0bcfd6]" href="guide.html">Guide</a>
         <a class="hover:text-[#0bcfd6]" href="market.html">Shop</a>
-        <a class="hover:text-[#0bcfd6]" href="collection.html">Collection</a>
+        <a class="hover:text-[#0bcfd6] drop-shadow-[0_0_10px_#14FFEC]" href="collection.html">Collection</a>
         <a class="hover:text-[#0bcfd6]" href="favourite.html">Favourite</a>
       </div>
 
-      <!-- Desktop Icons -->
+      
       <div class="hidden md:flex gap-4 items-center">
         <a class="hover:text-[#0bcfd6]" href="#">Sign in</a>
         <a href="panier.html"><i class="fa-solid fa-cart-shopping hover:text-[#0bcfd6]"></i></a>
@@ -62,11 +62,11 @@
 
     </nav>
 
-    <!-- Mobile Menu -->
+   
 
     <div class="sidebar">
         <span class="close-btn hover:text-[#14FFEC]">&times;</span>
-        <a href="index.html">Home</a>
+        <a  href="index.html ">Home</a>
             <a href="#">Play</a>
             <a href="guide.html">Guid</a>
             <a href="market.html">Shop</a>
@@ -83,44 +83,34 @@
         <section>
             <div class="flex flex-col justify-around items-center gap-10">
                 <div>
-                    <H1 class=" text-5xl text-white pt-32 font-[Audiowide] ">Collection</H1>
+                    <H1 class=" text-5xl text-white pt-32 font-[Audiowide] drop-shadow-[0_0_10px_#14FFEC] ">Collection</H1>
 
                 </div>
 
-                <div id="types" class="text-white font-[Audiowide] text-sm flex flex-wrap gap-4 justify-center">
+                <div id="types" class="text-white font-[Audiowide] text-sm flex flex-wrap gap-4 justify-center mb-20">
     <button data-type="all"
-        class="border-4 border-[#00446E] px-6 py-3 md:px-14 md:py-5 rounded-2xl hover:bg-[#14FFEC] hover:text-black">all</button>
+        class="border-4 border-[#00446E] px-6 py-3 rounded-2xl hover:bg-[#14FFEC] hover:text-black">all</button>
     <button data-type="epic"
-        class="border-4 border-[#00446E] px-6 py-3 md:px-14 md:py-5 rounded-2xl hover:bg-[#14FFEC] hover:text-black">epic</button>
+        class="border-4 border-[#00446E] px-6 py-3 rounded-2xl hover:bg-[#14FFEC] hover:text-black">epic</button>
     <button data-type="rare"
-        class="border-4 border-[#00446E] px-6 py-3 md:px-14 md:py-5 rounded-2xl hover:bg-[#14FFEC] hover:text-black">rare</button>
+        class="border-4 border-[#00446E] px-6 py-3 rounded-2xl hover:bg-[#14FFEC] hover:text-black">rare</button>
     <button data-type="common"
-        class="border-4 border-[#00446E] px-6 py-3 md:px-14 md:py-5 rounded-2xl hover:bg-[#14FFEC] hover:text-black">common</button>
+        class="border-4 border-[#00446E] px-6 py-3 rounded-2xl hover:bg-[#14FFEC] hover:text-black">common</button>
     <button data-type="legend"
-        class="border-4 border-[#00446E] px-6 py-3 md:px-14 md:py-5 rounded-2xl hover:bg-[#14FFEC] hover:text-black">legend</button>
+        class="border-4 border-[#00446E] px-6 py-3 rounded-2xl hover:bg-[#14FFEC] hover:text-black">legend</button>
 </div>
 
 
         </section>
 
 
-        <!-- <button id="acheter">Acheter</button> -->
-        <section id="collection" class="flex flex-wrap text-center">
+       
+        <section id="collection" class="flex flex-wrap text-center gap-10">
         </section>
 
         <section>
 
-            <div class="flex justify-center gap-4 mt-20 pb-20">
-                <button
-                    class="bg-[#0bcfd6] text-black w-10 h-10 rounded-full font-[Audiowide] hover:bg-[#14FFEC]">1</button>
-                <button
-                    class="bg-black text-white w-10 h-10 rounded-full font-[Audiowide] border-2 border-[#0bcfd6] hover:bg-[#14FFEC] hover:text-black">2</button>
-                <button
-                    class="bg-black text-white w-10 h-10 rounded-full font-[Audiowide] border-2 border-[#0bcfd6] hover:bg-[#14FFEC] hover:text-black">3</button>
-                <button
-                    class="bg-black text-white w-10 h-10 rounded-full font-[Audiowide] border-2 border-[#0bcfd6] hover:bg-[#14FFEC] hover:text-black">>></button>
-            </div>
-            </div>
+          
 
         </section>
     </main>
