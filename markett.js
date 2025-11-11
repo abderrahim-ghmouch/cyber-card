@@ -136,7 +136,7 @@ function printCards(filter = "all") {
 
     if (el.type == filter || filter == "all") {
       cardsSection.innerHTML += `
-<div class="flex flex-col bg-black shadow-2xl rounded-xl border-2 border-[#0bcfd6]
+<div class="flex flex-col bg-black shadow-2xl rounded-xl 
             hover:border-[#14FFEC] cursor-pointer w-full max-w-xs mx-auto">
 
     <img class="w-full h-[300px] object-contain hover:scale-105 duration-300"
