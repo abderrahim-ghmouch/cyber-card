@@ -62,6 +62,7 @@ arena.forEach((zone) => {
 
   zone.addEventListener("drop", (e) => {
     e.preventDefault();
+    
     if (zone.children.length > 0) {
       return;
     } else {
