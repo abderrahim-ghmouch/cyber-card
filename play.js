@@ -2,9 +2,14 @@ let cardColumn = JSON.parse(localStorage.getItem("collection"));
 let deckcontainer = document.getElementById("card-cols");
 let dropzone = document.querySelectorAll(".dropzone");
 let arena = document.querySelectorAll(".arenacase");
+let mode =document.getElementById(".popup");
 // let movecard =document.getElementById('draggedelement')
 // card.innerHTML = '';
 let dragged = null;
+
+let chooseMode=document.getElementById("cardMode");
+
+
 
 cardColumn.forEach((hhh) => {
   let div = document.createElement("div");
@@ -24,11 +29,13 @@ cardColumn.forEach((hhh) => {
     dragged = div;
     console.log("star");
   });
+
   div.addEventListener("dragend", () => {
     // div.classList.add("draging");
     dragged = null;
     console.log("star");
   });
+
 });
 
 
@@ -47,6 +54,11 @@ dropzone.forEach((zone) => {
     } else {
       zone.appendChild(dragged);
     }
+    if(dragged!=null)
+      {
+
+
+      }
   });
 
   
@@ -61,20 +73,31 @@ arena.forEach((zone) => {
   });
 
   zone.addEventListener("drop", (e) => {
+
     e.preventDefault();
-    
+
     if (zone.children.length > 0) {
       return;
+
     } else {
       zone.appendChild(dragged);
+console.log("3")
+      mode.classList.remove("hidden");
+     
     }
   });
 
-  
 });
 
-    // arena.addEventListener("drop");
-    // let card =document.querySelectorAll('.card')
+
+
+
+
+
+
+
+// arena.addEventListener("drop");
+// let card =document.querySelectorAll('.card')
     // card.addEventListener('dragstart',()=>
       //      {
 // card.classList.add('dragging')

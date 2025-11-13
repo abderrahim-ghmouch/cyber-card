@@ -78,11 +78,19 @@
     </header>
 
     <main>
+        <div id="popup" class="w-screen h-screen bg-black/50  flex justify-center items-center fixed hidden">
+ <div class="w-50 h-30  py-10 px-5 rounded-lg bg-[#14FFEC]/50">
+                    
+<button id="atk" class="atk h-10 w-20 text-white bg-red-600 rounded-lg">attaque</button>
+
+<button id="def" class="def h-10 w-20 text-white bg-green-600  rounded-lg">defense</button>
+                </div>
+</div>
         <div class="grid grid-cols-12 grid-rows-6  h-screen w-full gap-1">
             <div
                 class="border border-black col-span-2 row-span-6 bg-gradient-to-br from-gray-500 via-slate-800 to-stone-900 w-full ">
                 <div class="flex flex-col items-center">
-                    <h3 class="text-white">
+                    <h3 class="text-white ">
                         deck
                         <div id="card-cols" class="overflow-auto">
 
@@ -146,19 +154,38 @@
                     <div class="border border-dashed border-white rounded dropzone ">
                     </div>
                 </div>
+
+               
             </div>
 
         </div>
         <div>
+ <div id="modal-1" aria-hidden="true">
 
-            <div id="cardMode" class="flex-col gap-5  hidden">
-                <button>
-                    attack
-                </button>
-                <button>
-                    defense
-                </button>
-            </div>
+  <!-- [2] -->
+  <div tabindex="-1" data-micromodal-close>
+
+    <!-- [3] -->
+    <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title" >
+
+
+      <header>
+        <h2 id="modal-1-title">
+          Modal Title
+        </h2>
+
+        <!-- [4] -->
+        <button aria-label="Close modal" data-micromodal-close></button>
+      </header>
+
+      <div id="modal-1-content">
+        Modal Content
+      </div>
+
+    </div>
+  </div>
+</div>
+       
 
         </div>
     </main>
