@@ -81,12 +81,12 @@
                     Welcome to the game, the strategy card game that's easy to learn but impossible to put down.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <button class="border-2 border-white bg-[#0D7377] px-10 py-3 rounded-lg 
+                   <a <button href="play.html" class="border-2 border-white bg-[#0D7377] px-10 py-3 rounded-lg 
                font-bold tracking-wide text-white
                transition-all duration-300
                hover:bg-[#0bcfd6] hover:shadow-[0_0_20px_#0bcfd6] hover:scale-105">
                         Play Now
-                    </button>
+                    </button></a>
 
                     <a href="guide.html" class="border-2 border-[#0D7377] px-10 py-3 rounded-lg 
                font-bold tracking-wide text-white
@@ -133,8 +133,8 @@
 
     <section class="flex flex-col lg:flex-row items-center justify-evenly gap-20 px-6 my-32">
 
-        <img class="w-56 md:w-80 lg:w-[380px] transition transform duration-300 hover:scale-105 hover:shadow-[0_0_25px_black]"" src="
-            ./img/wolf_3.png" />
+        <img class="ninjacard" src="
+            ./img/ninjaf.png" />
         <div class="text-center max-w-md ">
             <h3 class="text-3xl md:text-4xl text-black " href="market.html">Start your Collection </h3>
             <p class="mt-6 text-lg text-black">
@@ -146,7 +146,7 @@
         transition-all duration-300
         hover:bg-[#14FFEC] hover:text-black
         hover:shadow-[0_0_20px_#14FFEC]">
-                Get Started
+                <a href=market.html>get started </a>
             </button>
         </div>
     </section>
@@ -198,6 +198,32 @@
 
     <script src="humburger.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"></script>
+    <script>
+        const card = document.querySelector('.ninjacard');
+
+        card.addEventListener('mousemove', (e) => {
+            // Get the card's bounding box
+            const rect = card.getBoundingClientRect();
+
+            // Calculate the mouse position relative to the card
+            // e.clientX = mouse X position on the page
+            // rect.left = card's left edge position on the page
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Set the CSS variables
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+
+        // Optional: Reset when the mouse leaves
+        card.addEventListener('mouseleave', () => {
+            // You can leave the variables as they are,
+            // or reset them if you prefer.
+            // Since the overlay fades out, it's not strictly needed.
+        });
+
+    </script>
 </body>
 
 </html>

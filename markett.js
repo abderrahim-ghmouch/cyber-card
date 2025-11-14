@@ -7,18 +7,19 @@ let data = [
     type: "legend",
   },
   {
-    id: 2,
-    name: "Nano Sorcerer",
-    price: 200,
-    image: "./img/nanoG.png ",
-    type: "epic",
+    id:2,
+    name:'shiter',
+    price:120,
+    image:"./img/shiter.png",
+    type:"common",
+  
   },
   {
     id: 3,
-    name: "cyber Elf",
-    price: 100,
-    image: "./img/bow2.png",
-    type: "common",
+    name: "cyber sage",
+    price: 300,
+    image: "./img/older.png",
+    type: "epic",
   },
   {
     id: 4,
@@ -64,8 +65,8 @@ let data = [
   },
   {
     id: 10,
-    name: "nano warior",
-    price: 100,
+    name: "Nano Sorcerer",
+    price: 200,
     image: "./img/nanoG.png",
     type: "common",
   },
@@ -77,7 +78,7 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
 let page = 1;
-let perPage = 3;
+let perPage = 6;
 let count = filteredData.length;
 let filter = "all";
 
@@ -143,7 +144,7 @@ function printCards(filter = "all") {
          src="${el.image}" alt="${el.name}">
 
     <div class="p-4">
-        <div class="flex justify-between items-center font-[Audiowide] text-white text-sm sm:text-lg">
+        <div class="flex justify-around items-center font-[Audiowide] text-white text-sm sm:text-lg">
             <h5>${el.name}</h5>
             <h5>${el.price}$</h5>
         </div>

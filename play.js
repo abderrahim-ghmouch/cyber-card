@@ -3,11 +3,9 @@ let deckcontainer = document.getElementById("card-cols");
 let dropzone = document.querySelectorAll(".dropzone");
 let arena = document.querySelectorAll(".arenacase");
 let mode = document.getElementById("popup");
-let attack=document.getElementById("atk");
-let deffense=document.getElementById("def");
+let attack = document.getElementById("atk");
+let deffense = document.getElementById("def");
 
-// let movecard =document.getElementById('draggedelement')
-// card.innerHTML = '';
 let dragged = null;
 
 let chooseMode = document.getElementById("cardMode");
@@ -18,23 +16,22 @@ cardColumn.forEach((hhh) => {
   div.setAttribute("draggable", "true");
   div.innerHTML += `
       <div>
-        <img id="draggedelement" class="hover:cursor-grab w-[auto] h-[150px]" 
+        <img id="draggedelement" class="hover:cursor-grab  " 
             src="${hhh.image}">
             </div> 
             `;
-
+  div.querySelector("#draggedelement").setAttribute("draggable", false);
   deckcontainer.appendChild(div);
 
   div.addEventListener("dragstart", () => {
     div.classList.add("draging");
+
     dragged = div;
-    console.log("star");
   });
 
   div.addEventListener("dragend", () => {
     div.classList.remove("draging");
     dragged = null;
-    console.log("star");
   });
 });
 
@@ -49,6 +46,7 @@ dropzone.forEach((zone) => {
       return;
     } else {
       zone.appendChild(dragged);
+      dragged.classList.add("handCard");
     }
     if (dragged != null) {
     }
@@ -66,19 +64,24 @@ arena.forEach((zone) => {
     if (zone.children.length > 0) {
       return;
     } else {
-      zone.appendChild(dragged);
-      console.log(mode);
-      const draging = document.querySelector('.draging');
-      mode.classList.remove("hidden");
-      
-      attack.onclick = () => {
-        mode.classList.add("hidden");
+      if (dragged.classList.contains("handCard")) {
+        zone.appendChild(dragged);
 
-      }
+        const draging = document.querySelector(".draging");
 
-      deffense.onclick = () => {
-        mode.classList.add("hidden");
-        draging.classList.add("rotate-90");
+        mode.classList.remove("hidden");
+
+        attack.onclick = () => {
+          mode.classList.add("hidden");
+        };
+
+        deffense.onclick = () => {
+          mode.classList.add("hidden");
+
+          draging.setAttribute("draggable", false);
+
+          draging.classList.add("rotate-90");
+        };
       }
     }
   });

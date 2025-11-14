@@ -84,7 +84,11 @@ function printCart() {
   cartSection.innerHTML = "";
 
   if (cart.length == 0) {
-    cartSection.innerHTML = `<p class="text-white">nothing found</p>`;
+    cartSection.innerHTML = `<<div class="py-24 flex justify-center items-center justify-center">
+      <p class="text-[#14FFEC] text-2xl md:text-3xl font-bold justify-center text-center drop-shadow-[0_0_10px_#14FFEC]">
+            Nothing here for the moment 😴
+      </p>
+    </div>  `;
   }
 
   cart.forEach((el) => {
@@ -93,16 +97,16 @@ function printCart() {
       `
             <div
                     data-id="${el.id}"
-                    class="card h-[80vh] flex  justify-center items-center flex-col bg-black shadow-2xl shadow-[#00F8FF]/60 rounded-lg border-2 border-[#0bcfd6] hover:border-[#0bcfd6] cursor-pointer  ">
-                    <img class="h-[55vh] w-[60%]  rounded-t-lg mt-5" src=${el.image}>
+                    class="card h-[80vh] flex  justify-center items-center flex-col bg-black shadow-2xl  rounded-lg  hover:border-[#0bcfd6] cursor-pointer  ">
+                    <img class="hw-full h-[300px] object-contain hover:scale-105 duration-300 rounded-t-lg mt-5" src=${el.image}>
                     <div>
-                          <div class="flex justify-around m-y-4 font-[Audiowide] text-xl text-white">
+                          <div class="flex  justify-around m-y-4 font-[Audiowide] text-xl text-white">
                               <h5>
                               ${el.name}
                               </h5>
                               <h5>${el.price}$</h5>
                           </div>
-                          <div class="flex justify-around mt-10 ">
+                          <div class="flex justify-around mt-5 ">
 
                         <input class="text-white drop-shadow-[0_0_10px_#14FFEC] ml-5 w-[100px] h-[50px] mb-5 rounded-xl text-center bg-black"data-id="${el.id}" value="${el.quantity}" min="1" max="10" type="number">
 
@@ -134,8 +138,6 @@ function printCart() {
   }, 0);
   document.getElementById("total").innerText = total;
 }
-
-
 
 document.querySelectorAll(".btn-fav").forEach((btn) => {
   btn.addEventListener("click", (e) => {

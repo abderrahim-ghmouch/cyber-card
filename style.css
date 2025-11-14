@@ -33,76 +33,75 @@
   }
 }
 
-
 /* === HAMBURGER === */
 .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 18px;
-    cursor: pointer;
-    position: absolute;
-    right: 2rem;
-    z-index: 200;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  position: absolute;
+  right: 2rem;
+  z-index: 200;
 }
 
 .hamburger span {
-    display: block;
-    height: 2px;
-    width: 100%;
-    background: white;
-    border-radius: 3px;
-    transition: all 0.3s ease;
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
 }
 
 /* === SIDEBAR === */
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(100%);
-    transition: transform 0.4s ease;
-    z-index: 2500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  z-index: 2500;
 }
 
 .sidebar.active {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .sidebar a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin: 1rem 0;
-    transition: color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  transition: color 0.3s ease;
 }
 
 .sidebar a:hover {
-    color: #a9b3ff;
+  color: #a9b3ff;
 }
 
 /* === CLOSE BUTTON === */
 .close-btn {
-    position: absolute;
-    top: 1.5rem;
-    right: 2rem;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    transition: color 0.3s ease;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .close-btn:hover {
-    color: #a9b3ff;
+  color: #a9b3ff;
 }
 /* 
 === HAMBURGER ANIMATION ===
@@ -118,30 +117,26 @@
     transform: rotate(-45deg) translate(6px, -6px);
 } */
 
-
 @media (min-width: 768px) {
   .hamburger {
-        display: none;
-    }
+    display: none;
+  }
 }
 
-
-
- .play{
-display:grid;
-padding-top:100px;
-background-color: blue;
-grid-template-columns: repeat(8,1fr);
-grid-template-rows: repeat(4,1fr);  
-gap:20px; 
+.play {
+  display: grid;
+  padding-top: 100px;
+  background-color: blue;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 20px;
 }
-.left{
-grid-template-columns: 1/3;
-grid-template-rows: 1/4;
-background-color: green;
-height:200px;
+.left {
+  grid-template-columns: 1/3;
+  grid-template-rows: 1/4;
+  background-color: green;
+  height: 200px;
 }
-
 
 /* 
 .arena > div:nth-child(1) {
@@ -155,3 +150,49 @@ height:200px;
 /* .arena > div:nth-child(3) {
   background: green; 
 }  */
+
+#card-cols::-webkit-scrollbar-track,
+#card-cols::-webkit-scrollbar {
+  background-color: transparent;
+}
+.ninjacard{width: 300px;
+            height: 420px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            
+            /* IMPORTANT: Required for the overlay */
+            position: relative;
+            overflow: hidden;
+          }
+          
+          .ninjacard::before
+          {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            
+            /* This is the gradient that follows the mouse.
+              It uses CSS variables (--mouse-x and --mouse-y)
+              which we will set with JavaScript.
+            */
+            background: radial-gradient(
+                circle 200px at var(--mouse-x) var(--mouse-y),
+                rgba(255, 255, 255, 0.3) 0%, /* Bright center */
+                rgba(255, 255, 255, 0) 40%,  /* Fades out */
+                rgba(0, 255, 231, 0.2) 60%,  /* Cyan tint */
+                rgba(255, 0, 234, 0.2) 80%,  /* Magenta tint */
+                rgba(255, 255, 0, 0.2) 100% );
+                
+                opacity: 0;
+            transition: opacity 0.3s ease;
+          }
+          .ninjacard:hover::before
+          {
+opacity:1;
+          }
