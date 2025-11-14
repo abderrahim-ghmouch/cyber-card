@@ -176,18 +176,49 @@ document.addEventListener("input", (e) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
 });
+  console.log("nnnnnnnnnnnnnn1",cart);
 
-document.querySelectorAll(".btn-sup").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
+// document.querySelectorAll(".btn-sup").forEach((btn) => {
+//   console.log("nnnnnnnnnnnnnn",cart);
+
+//   btn.addEventListener("click", (e) => {
+//     const id = e.target.dataset.id;
+
+//     cart = cart.filter((e) => {
+//       return e.id != id;
+//     });
+
+//     localStorage.setItem("cart", JSON.stringify(cart));
+//     document.querySelector(`.card[data-id='${id}']`).remove();
+//   });
+
+// });
+
+
+document.addEventListener("click", (e) => {
+
+  if (e.target.classList.contains("btn-sup")) {
     const id = e.target.dataset.id;
 
-    cart = cart.filter((e) => {
-      return e.id != id;
-    });
-
+    cart = cart.filter((c) => c.id != id);
     localStorage.setItem("cart", JSON.stringify(cart));
+
     document.querySelector(`.card[data-id='${id}']`).remove();
-  });
+    printCart();
+  }
+  
+ if (e.target.classList.contains("btn-fav")) {
+    const id = e.target.dataset.id;
+    let exist = favorites.some((f) => f.id == id);
+
+    if (!exist) {
+      let add = data.find((d) => d.id == id);
+      favorites.push(add);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+  }
+
 });
+
 
 printCart();

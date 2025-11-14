@@ -32,7 +32,7 @@ let data = [
     id: 5,
     name: "Dark Hacker",
     price: 100,
-    image: "./img/ninja.png",
+    image: "./img/arabic.png",
     type: "rare",
   },
   {
@@ -58,9 +58,9 @@ let data = [
   },
   {
     id: 9,
-    name: "ninga slayer",
+    name: "neo nomad kid",
     price: 100,
-    image: "./img/ninja.png",
+    image: "./img/small.png",
     type: "epic",
   },
   {
