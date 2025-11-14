@@ -89,7 +89,7 @@ let perPage = 6;
 let count = filteredData.length;
 let filter = "all";
 
-// type = ["all", "epic", "common", "rare", "legend"];
+
 
 let buttons = document.querySelectorAll("#types button");
 buttons.forEach((e) => {

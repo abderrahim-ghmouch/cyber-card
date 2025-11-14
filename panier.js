@@ -86,7 +86,7 @@ function printCart() {
   if (cart.length == 0) {
     cartSection.innerHTML = `<<div class="py-24 flex justify-center items-center justify-center">
       <p class="text-[#14FFEC] text-2xl md:text-3xl font-bold justify-center  drop-shadow-[0_0_10px_#14FFEC]">
-            Nothing here for the moment ...
+            no cards here for the moment ...
       </p>
     </div>  `;
   }
@@ -100,7 +100,7 @@ function printCart() {
                     class="card h-[80vh] flex  justify-center items-center flex-col bg-black shadow-2xl  rounded-lg cursor-pointer  ">
                     <img class="hw-full h-[300px] object-contain hover:scale-105 duration-300 rounded-t-lg mt-5" src=${el.image}>
                     <div>
-                          <div class="flex  justify-around m-y-4 font-[Audiowide] text-xl text-white">
+                          <div class="flex  justify-evenly m-y-4 font-[Audiowide] text-xl text-white">
                               <h5>
                               ${el.name}
                               </h5>
@@ -119,7 +119,7 @@ function printCart() {
                               data-id="${el.id}"
                            
                                   class="btn-sup font-[Audiowide] text-white  text-xs border-[#0D7377] border-2 p-2.5 rounded-md duration-200 hover:shadow-md hover:shadow-[#0D7377] hover:bg-[#14FFEC]  hover:text-black">
-                                  Delete From Cart</button>
+                                  Delete </button>
                                   
 <button
                               data-id="${el.id}"

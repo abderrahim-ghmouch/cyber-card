@@ -9,7 +9,7 @@ function printFavorites() {
 if (favorites.length == 0) {
     favoritesSection.innerHTML =  `   
       <p class="text-[#14FFEC] text-2xl md:text-3xl font-bold flex justify-center text-center drop-shadow-[0_0_10px_#14FFEC] col-span-1 sm:col-span-2 md:col-span-3">
-            Nothing here for the moment . . .
+            no cards here for the moment . . .
       </p>
     `;
   }
@@ -19,10 +19,10 @@ if (favorites.length == 0) {
       favoritesSection.innerHTML +
       `
             <div
-                    class=" h-[80vh] bg-black w-[270px] shadow-2xl shadow-[#00F8FF]/60 rounded-lg border-2 border-[#0bcfd6] hover:border-[#0bcfd6] cursor-pointer  ">
-                    <img class="h-[60vh] rounded-t-lg " src=${el.image}>
+                    class=" h-[80vh]  w-[270px] rounded-lg  cursor-pointer  ">
+                    <img class="h-[60vh] m-5 rounded-t-lg hover:scale-100 duration-200" src=${el.image}>
                     <div>
-                          <div class="flex justify-around m-y-4 font-[Audiowide] text-xl text-white">
+                          <div class="flex justify-evenly font-[Audiowide] text-xl text-white">
                               <h5>
                               ${el.name}
                               </h5>
@@ -42,7 +42,7 @@ if (favorites.length == 0) {
 <button
                                data-id="${el.id}"
                                   class="btn-sup font-[Audiowide] text-white  text-xs border-[#0D7377] border-2 p-2.5 rounded-md duration-200 hover:shadow-md hover:shadow-[#0D7377] hover:bg-[#14FFEC]  hover:text-black">
-                                  Remove From fav</button>
+                                  Remove</button>
                           </div>
                       </div>
                   </div>
