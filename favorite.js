@@ -7,11 +7,11 @@ function printFavorites() {
   favoritesSection.innerHTML = "";
 
 if (favorites.length == 0) {
-    favoritesSection.innerHTML =  `    <div class="py-24 flex justify-center items-center justify-center">
-      <p class="text-[#14FFEC] text-2xl md:text-3xl font-bold justify-center text-center drop-shadow-[0_0_10px_#14FFEC]">
-            Nothing here for the moment 😴
+    favoritesSection.innerHTML =  `   
+      <p class="text-[#14FFEC] text-2xl md:text-3xl font-bold flex justify-center text-center drop-shadow-[0_0_10px_#14FFEC] col-span-1 sm:col-span-2 md:col-span-3">
+            Nothing here for the moment . . .
       </p>
-    </div> `;
+    `;
   }
 
   favorites.forEach((el) => {

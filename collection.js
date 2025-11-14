@@ -13,7 +13,9 @@ function printCollection(filter = "all") {
   cardsCollection.innerHTML = "";
 
   collection.forEach((el) => {
+
     if (el.type == filter || filter == "all") {
+      
       cardsCollection.innerHTML =
         cardsCollection.innerHTML +
         `

@@ -85,8 +85,8 @@ function printCart() {
 
   if (cart.length == 0) {
     cartSection.innerHTML = `<<div class="py-24 flex justify-center items-center justify-center">
-      <p class="text-[#14FFEC] text-2xl md:text-3xl font-bold justify-center text-center drop-shadow-[0_0_10px_#14FFEC]">
-            Nothing here for the moment 😴
+      <p class="text-[#14FFEC] text-2xl md:text-3xl font-bold justify-center  drop-shadow-[0_0_10px_#14FFEC]">
+            Nothing here for the moment ...
       </p>
     </div>  `;
   }
@@ -97,7 +97,7 @@ function printCart() {
       `
             <div
                     data-id="${el.id}"
-                    class="card h-[80vh] flex  justify-center items-center flex-col bg-black shadow-2xl  rounded-lg  hover:border-[#0bcfd6] cursor-pointer  ">
+                    class="card h-[80vh] flex  justify-center items-center flex-col bg-black shadow-2xl  rounded-lg cursor-pointer  ">
                     <img class="hw-full h-[300px] object-contain hover:scale-105 duration-300 rounded-t-lg mt-5" src=${el.image}>
                     <div>
                           <div class="flex  justify-around m-y-4 font-[Audiowide] text-xl text-white">
@@ -176,27 +176,8 @@ document.addEventListener("input", (e) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
 });
-  console.log("nnnnnnnnnnnnnn1",cart);
-
-// document.querySelectorAll(".btn-sup").forEach((btn) => {
-//   console.log("nnnnnnnnnnnnnn",cart);
-
-//   btn.addEventListener("click", (e) => {
-//     const id = e.target.dataset.id;
-
-//     cart = cart.filter((e) => {
-//       return e.id != id;
-//     });
-
-//     localStorage.setItem("cart", JSON.stringify(cart));
-//     document.querySelector(`.card[data-id='${id}']`).remove();
-//   });
-
-// });
-
 
 document.addEventListener("click", (e) => {
-
   if (e.target.classList.contains("btn-sup")) {
     const id = e.target.dataset.id;
 
@@ -206,8 +187,8 @@ document.addEventListener("click", (e) => {
     document.querySelector(`.card[data-id='${id}']`).remove();
     printCart();
   }
-  
- if (e.target.classList.contains("btn-fav")) {
+
+  if (e.target.classList.contains("btn-fav")) {
     const id = e.target.dataset.id;
     let exist = favorites.some((f) => f.id == id);
 
@@ -217,8 +198,6 @@ document.addEventListener("click", (e) => {
       localStorage.setItem("favorites", JSON.stringify(favorites));
     }
   }
-
 });
-
 
 printCart();

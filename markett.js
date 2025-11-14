@@ -42,12 +42,12 @@ let data = [
     image: "./img/queen 1.png",
     type: "legend",
   },
-  {
+   {
     id: 7,
-    name: "Cyber Sprits",
-    price: 100,
-    image: "./img/ne.png",
-    type: "rare",
+    name: "Cyber sniper",
+    price: 700,
+    image: "./img/sniper.png",
+    type: "legend",
   },
   {
     id: 8,
@@ -69,6 +69,13 @@ let data = [
     price: 200,
     image: "./img/nanoG.png",
     type: "common",
+  },
+  {
+    id: 11,
+    name: "Cyber Sprits",
+    price: 100,
+    image: "./img/ne.png",
+    type: "rare",
   },
 ];
 let filteredData = data;
